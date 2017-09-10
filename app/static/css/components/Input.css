@@ -1,0 +1,222 @@
+@charset "UTF-8";
+/**
+ *  Input样式
+ *  Created @ 2017-08-22 00:54:02
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  params
+ *  Created @ 2017-07-20 00:37:42
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  颜色变量 start
+ */
+/**
+ *  颜色变量 end
+ */
+/**
+ *  层级关系
+ */
+/**
+ *  组件样式配置文件
+ *  Created @ 2017-07-30 17:51:17
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  params
+ *  Created @ 2017-07-20 00:37:42
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  颜色变量 start
+ */
+/**
+ *  颜色变量 end
+ */
+/**
+ *  层级关系
+ */
+.corgi-input__icon:after, .corgi-input__addon:after {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+/**
+ *  生成和颜色相关的属性
+ */
+.corgi-input {
+  position: relative;
+  width: 100%;
+  height: 36px;
+  font-size: 14px;
+}
+.corgi-input.corgi-input__large {
+  height: 40px;
+  font-size: 18px;
+}
+.corgi-input.corgi-input__small {
+  height: 32px;
+  font-size: 13px;
+}
+.corgi-input.corgi-input__mini {
+  height: 28px;
+  font-size: 14px;
+}
+.corgi-input__wrapper {
+  display: table;
+}
+.corgi-input__el {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0 10px;
+  border: 1px solid #e6e6e6;
+  border-radius: 5px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-image: none;
+  background-color: #fff;
+  font-size: inherit;
+  -webkit-transition: border-color .2s linear;
+  transition: border-color .2s linear;
+  color: #333;
+}
+.corgi-input__el:hover {
+  border-color: #b2beca;
+}
+.corgi-input__el:focus {
+  border-color: #57a3f1;
+}
+.corgi-input__el::-webkit-input-placeholder {
+  color: #ccc;
+}
+.corgi-input__el:-ms-input-placeholder {
+  color: #ccc;
+}
+.corgi-input__el::placeholder {
+  color: #ccc;
+}
+.corgi-input__el::input-placeholder {
+  color: #ccc;
+}
+.corgi-input__el[readonly]:hover, .corgi-input__el[readonly]:focus {
+  border-color: #e6e6e6;
+}
+.corgi-input__el[disabled] {
+  background-color: #f5f5f5;
+  cursor: not-allowed;
+  color: #999;
+}
+.corgi-input__el[disabled]:hover {
+  border-color: #e6e6e6;
+}
+.corgi-input__icon {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 36px;
+  text-align: center;
+}
+.corgi-input__icon.icon-left {
+  left: 0;
+}
+.corgi-input__icon.icon-left + .corgi-input__el {
+  padding-left: 36px;
+}
+.corgi-input__icon.icon-right {
+  right: 0;
+}
+.corgi-input__icon.icon-right + .corgi-input__el {
+  padding-right: 36px;
+}
+.corgi-input__addon {
+  display: table-cell;
+  width: 1px;
+  padding: 0 7px;
+  border: 1px solid #e6e6e6;
+  background-color: #f5f5f5;
+  color: #b2beca;
+}
+.corgi-input__addon.corgi-preaddon {
+  border-right: none;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.corgi-input__addon.corgi-preaddon + .corgi-input__el {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.corgi-input__addon.corgi-postaddon {
+  border-left: none;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.corgi-wrapper__postaddon .corgi-input__el {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.corgi-textarea {
+  font-size: 14px;
+}
+.corgi-textarea__el {
+  display: block;
+  resize: vertical;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #e6e6e6;
+  border-radius: 5px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-image: none;
+  background-color: #fff;
+  font-size: inherit;
+  -webkit-transition: border-color .2s linear;
+  transition: border-color .2s linear;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #666;
+}
+.corgi-textarea__el:hover {
+  border-color: #b2beca;
+}
+.corgi-textarea__el:focus {
+  border-color: #57a3f1;
+}
+.corgi-textarea__el::-webkit-input-placeholder {
+  color: #ccc;
+}
+.corgi-textarea__el:-ms-input-placeholder {
+  color: #ccc;
+}
+.corgi-textarea__el::placeholder {
+  color: #ccc;
+}
+.corgi-textarea__el::input-placeholder {
+  color: #ccc;
+}
+.corgi-textarea__both {
+  width: auto;
+  resize: both;
+}
+.corgi-textarea__horizontal {
+  width: auto;
+  resize: horizontal;
+}
+.corgi-textarea__none {
+  resize: none;
+}

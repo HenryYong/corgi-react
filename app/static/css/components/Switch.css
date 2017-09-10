@@ -1,0 +1,148 @@
+@charset "UTF-8";
+/**
+ *  Switch Style
+ *  Created @ 2017-09-08 19:03:39
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  params
+ *  Created @ 2017-07-20 00:37:42
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  颜色变量 start
+ */
+/**
+ *  颜色变量 end
+ */
+/**
+ *  层级关系
+ */
+/**
+ *  组件样式配置文件
+ *  Created @ 2017-07-30 17:51:17
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  params
+ *  Created @ 2017-07-20 00:37:42
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  颜色变量 start
+ */
+/**
+ *  颜色变量 end
+ */
+/**
+ *  层级关系
+ */
+/**
+ *  生成和颜色相关的属性
+ */
+.corgi-switch {
+  position: relative;
+  display: inline-block;
+}
+.corgi-switch__el {
+  display: none;
+}
+.corgi-switch__trigger {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 26px;
+  border: 1px solid #5bd18b;
+  border-radius: 14px;
+  cursor: pointer;
+  background-color: #5bd18b;
+  -webkit-transition: border-color .3s, background-color .3s;
+  transition: border-color .3s, background-color .3s;
+}
+.corgi-switch__slider {
+  display: inline-block;
+  position: absolute;
+  top: 1px;
+  width: 22px;
+  height: 22px;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  background-color: #fff;
+  -webkit-transition: background-color .2s, -webkit-transform linear .2s;
+  transition: background-color .2s, -webkit-transform linear .2s;
+  transition: transform linear .2s, background-color .2s;
+  transition: transform linear .2s, background-color .2s, -webkit-transform linear .2s;
+  z-index: 1;
+}
+.corgi-switch__on .corgi-switch__slider {
+  -webkit-transform: translateX(35px);
+          transform: translateX(35px);
+}
+.corgi-switch__on .corgi-switch__label {
+  left: 0;
+}
+.corgi-switch__off .corgi-switch__trigger {
+  background-color: #e6e6e6;
+  border-color: #e6e6e6;
+}
+.corgi-switch__off .corgi-switch__slider {
+  -webkit-transform: translateX(1px);
+          transform: translateX(1px);
+}
+.corgi-switch__off .corgi-switch__label {
+  right: 0;
+}
+.corgi-switch__label {
+  position: absolute;
+  top: 50%;
+  width: 36px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-size: 12px;
+  color: #fff;
+  cursor: pointer;
+  text-align: center;
+}
+.corgi-switch__small .corgi-switch__trigger {
+  width: 44px;
+  height: 24px;
+  border-radius: 14px;
+}
+.corgi-switch__small .corgi-switch__slider {
+  width: 20px;
+  height: 20px;
+}
+.corgi-switch__small .corgi-switch__label {
+  width: 22px;
+}
+.corgi-switch__small.corgi-switch__on .corgi-switch__slider {
+  -webkit-transform: translateX(21px);
+          transform: translateX(21px);
+}
+.corgi-switch__square .corgi-switch__trigger, .corgi-switch__square .corgi-switch__slider {
+  border-radius: 3px;
+}
+.corgi-switch__hollow .corgi-switch__trigger {
+  background-color: transparent;
+}
+.corgi-switch__hollow .corgi-switch__slider {
+  border-color: #e6e6e6;
+}
+.corgi-switch__hollow.corgi-switch__on .corgi-switch__slider {
+  background-color: #5bd18b;
+  border-color: #5bd18b;
+}
+.corgi-switch__hollow.corgi-switch__on .corgi-switch__label {
+  color: #5bd18b;
+}
+.corgi-switch__hollow.corgi-switch__off .corgi-switch__label {
+  color: #e6e6e6;
+}

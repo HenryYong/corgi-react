@@ -1,0 +1,116 @@
+/**
+ *  Table样式
+ *  Created @ 2017-08-28 20:20:48
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+
+@import './../params';
+@import './../conf';
+
+/**
+ *  生成状态相关的属性
+ **/
+@mixin statusGenerator($theme) {
+    &.#{$theme} {
+        background-color: map-get($themeMap, $theme);
+        color: $default;
+        &:hover {
+            background-color: map-get($themeMap, ($theme + "Active"));
+        }
+    }
+}
+
+.#{$name}-table {
+    width: 100%;
+    border: 1px solid $defaultBorderColor;
+    &__bordered {
+        & > .#{$name}-table {
+            &__header > tr {
+                & > th {
+                    border-right: 1px solid $defaultBorderColor;
+                    &:last-child {
+                        border-right: none;
+                    }
+                }
+            }
+            &__body > tr {
+                & > td {
+                    border-right: 1px solid $defaultBorderColor;
+                }
+                &:last-child {
+                    border-right: none;
+                }
+            }
+        }
+    }
+    &__stripe {
+        & > .#{$name}-table__body > tr {
+            &:nth-of-type(even) {
+                & > td {
+                    background-color: $supplementary-light;
+                }
+            }
+        }
+    }
+    &__hover {
+        .#{$name}-table__body > tr {
+            &:hover {
+                background-color: $defaultTableBGC;
+            }    
+        }
+    }
+    .#{$name}-table {
+        &__header > tr {
+            background-color: $defaultTableBGC;
+            & > th {
+                padding: 10px 15px;
+                border-bottom: 1px solid $defaultBorderColor;
+                font-size: 14px;
+                text-align: left;
+            }
+        }
+        &__body {
+            &.#{$name}-table__empty > tr {
+                &:hover {
+                    background-color: transparent;
+                }
+                & > td {
+                    padding-top: 30px;
+                    padding-bottom: 30px;
+                    text-align: center;
+                }
+            }
+            & > tr {
+                &.#{$name}-table__expand-row {
+                    &,
+                    &:hover {
+                        background-color: $supplementary-light;
+                    }
+                    &.hidden {
+                        display: none;
+                    }
+                }
+                & > td {
+                    padding: 10px 15px;
+                    border-bottom: 1px solid $defaultBorderColor;
+                    &.#{$name}-table__expand-icon {
+                        width: 30px;
+                        padding-left: 5px;
+                        padding-right: 5px;
+                        text-align: center;
+                        cursor: pointer;
+                    }
+                }
+                &:last-child {
+                    border-bottom: none;
+                }
+                // 生成有状态的行
+                @each $theme in $mainTheme {
+                    @include statusGenerator($theme)
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,8 @@
+.DS_Store
+.DS_Store?
+.git
+.Trashes
+node_modules
+node_modules?
+doc
+npm-debug.log*

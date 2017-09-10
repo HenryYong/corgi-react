@@ -1,0 +1,43 @@
+/**
+ *  组件样式配置文件
+ *  Created @ 2017-07-30 17:51:17
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+
+@import './params';
+
+%clearfix {
+    &:before,
+    &:after {
+        content: '';
+        display: table;
+        line-height: 0;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+%responsiveAlignMiddle {
+    &:after {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+    }
+}
+
+@mixin setTransition($attr: all, $timingFn: linear, $duration: .2s) {
+    transition: $attr $timingFn $duration;
+}
+
+/**
+ *  生成和颜色相关的属性
+ */
+@mixin attrColorGenerator($theme, $attrs...) {
+    @each $attr in $attrs {
+        #{$attr}: map-get($themeMap, $theme);
+    }
+}

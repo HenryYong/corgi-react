@@ -1,0 +1,2483 @@
+@charset "UTF-8";
+/**
+ *  Corgi
+ *  Created @ 2017-07-20 00:18:42
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  params
+ *  Created @ 2017-07-20 00:37:42
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  颜色变量 start
+ */
+/**
+ *  颜色变量 end
+ */
+/**
+ *  层级关系
+ */
+/**
+ *  reset
+ *  Created @ 2017-07-20 00:09:07
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  params
+ *  Created @ 2017-07-20 00:37:42
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  颜色变量 start
+ */
+/**
+ *  颜色变量 end
+ */
+/**
+ *  层级关系
+ */
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 14px;
+  font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,SimSun,sans-serif;
+  line-height: 1;
+  vertical-align: baseline;
+  -webkit-font-smoothing: antialiased;
+}
+
+html,
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+.h1 {
+  margin: 0;
+  font-weight: 300;
+  font-size: 32px;
+}
+
+h2,
+.h2 {
+  margin: 0;
+  font-weight: 300;
+  font-size: 28px;
+}
+
+h3,
+.h3 {
+  margin: 0;
+  font-weight: 300;
+  font-size: 24px;
+}
+
+h4,
+.h4 {
+  margin: 0;
+  font-weight: 300;
+  font-size: 20px;
+}
+
+h5,
+.h5 {
+  margin: 0;
+  font-weight: 300;
+  font-size: 16px;
+}
+
+h6,
+.h6 {
+  margin: 0;
+  font-weight: 300;
+  font-size: 12px;
+}
+
+p {
+  margin: 0;
+}
+
+input,
+select,
+textarea {
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: 1px solid #e6e6e6;
+  vertical-align: middle;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/**
+ *  字体图标
+ *  Created @ 2017-07-30 00:00:38
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  内置动画样式
+ *  Created @ 2017-08-01 22:21:02
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  params
+ *  Created @ 2017-07-20 00:37:42
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  颜色变量 start
+ */
+/**
+ *  颜色变量 end
+ */
+/**
+ *  层级关系
+ */
+.name-fade-enter-active,
+.name-fade-leave-active {
+  -webkit-transition: opacity linear .2s;
+  transition: opacity linear .2s;
+}
+
+.name-fade-enter,
+.name-fade-leave-to {
+  opacity: 0;
+}
+
+@-webkit-keyframes circling {
+  from {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  to {
+    -webkit-transform: rotate(1turn);
+            transform: rotate(1turn);
+  }
+}
+
+@keyframes circling {
+  from {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  to {
+    -webkit-transform: rotate(1turn);
+            transform: rotate(1turn);
+  }
+}
+@font-face {
+  font-family: "iconfont";
+  src: url("./fonts/iconfont.eot?t=1504083944459");
+  /* IE9*/
+  src: url("./fonts/iconfont.eot?t=1504083944459#iefix") format("embedded-opentype"), url("data:application/x-font-woff;charset=utf-8;base64,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") format("woff"), url("./fonts/iconfont.ttf?t=1504083944459") format("truetype"), url("./fonts/iconfont.svg?t=1504083944459#iconfont") format("svg");
+  /* iOS 4.1- */
+}
+.iconfont {
+  display: inline-block;
+  -webkit-transition: -webkit-transform linear .2s;
+  transition: -webkit-transform linear .2s;
+  transition: transform linear .2s;
+  transition: transform linear .2s, -webkit-transform linear .2s;
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-corgi-close:before {
+  content: "\e625";
+}
+
+.icon-corgi-quarter-loading:before {
+  content: "\e8ad";
+}
+
+.icon-corgi-loading:before {
+  content: "\e703";
+}
+
+.icon-corgi-check:before {
+  content: "\e671";
+}
+
+.icon-corgi-three-quarter-loading:before {
+  content: "\eb0e";
+}
+
+.icon-corgi-share:before {
+  content: "\e669";
+}
+
+.icon-corgi-triangle:before {
+  content: "\e629";
+}
+
+.icon-corgi-up:before {
+  content: "\e63e";
+}
+
+.icon-corgi-upload:before {
+  content: "\e68a";
+}
+
+.icon-corgi-delete:before {
+  content: "\e618";
+}
+
+.icon-corgi-edit:before {
+  content: "\e60f";
+}
+
+.icon-spinner2.loading,
+.icon-corgi-loading.loading,
+.icon-corgi-quarter-loading.loading,
+.icon-corgi-three-quarter-loading.loading {
+  -webkit-animation: circling linear .8s infinite;
+          animation: circling linear .8s infinite;
+}
+
+.icon-corgi-up.left {
+  -webkit-transform: rotate(270deg);
+          transform: rotate(270deg);
+}
+.icon-corgi-up.down {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.icon-corgi-up.right {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+/**
+ *  组件库公用样式
+ *  Created @ 2017-08-01 00:01:18
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  params
+ *  Created @ 2017-07-20 00:37:42
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  颜色变量 start
+ */
+/**
+ *  颜色变量 end
+ */
+/**
+ *  层级关系
+ */
+/**
+ *  组件样式配置文件
+ *  Created @ 2017-07-30 17:51:17
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  params
+ *  Created @ 2017-07-20 00:37:42
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  颜色变量 start
+ */
+/**
+ *  颜色变量 end
+ */
+/**
+ *  层级关系
+ */
+.corgi-row:before, .corgi-btn-group:before, .corgi-select__list .corgi-select__item:before, .corgi-form__row:before, .corgi-form__inline:before, .corgi-row:after, .corgi-btn-group:after, .corgi-select__list .corgi-select__item:after, .corgi-form__row:after, .corgi-form__inline:after {
+  content: '';
+  display: table;
+  line-height: 0;
+}
+.corgi-row:after, .corgi-btn-group:after, .corgi-select__list .corgi-select__item:after, .corgi-form__row:after, .corgi-form__inline:after {
+  clear: both;
+}
+
+.corgi-input__icon:after, .corgi-input__addon:after {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+/**
+ *  生成和颜色相关的属性
+ */
+/**
+ *  内置动画样式
+ *  Created @ 2017-08-01 22:21:02
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  params
+ *  Created @ 2017-07-20 00:37:42
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  颜色变量 start
+ */
+/**
+ *  颜色变量 end
+ */
+/**
+ *  层级关系
+ */
+.name-fade-enter-active,
+.name-fade-leave-active {
+  -webkit-transition: opacity linear .2s;
+  transition: opacity linear .2s;
+}
+
+.name-fade-enter,
+.name-fade-leave-to {
+  opacity: 0;
+}
+
+@keyframes circling {
+  from {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  to {
+    -webkit-transform: rotate(1turn);
+            transform: rotate(1turn);
+  }
+}
+/**
+ *  Row组件样式
+ *  Created @ 2017-07-30 00:27:45
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  组件样式配置文件
+ *  Created @ 2017-07-30 17:51:17
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  params
+ *  Created @ 2017-07-20 00:37:42
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  颜色变量 start
+ */
+/**
+ *  颜色变量 end
+ */
+/**
+ *  层级关系
+ */
+.corgi-row:before, .corgi-btn-group:before, .corgi-select__list .corgi-select__item:before, .corgi-form__row:before, .corgi-form__inline:before, .corgi-row:after, .corgi-btn-group:after, .corgi-select__list .corgi-select__item:after, .corgi-form__row:after, .corgi-form__inline:after {
+  content: '';
+  display: table;
+  line-height: 0;
+}
+.corgi-row:after, .corgi-btn-group:after, .corgi-select__list .corgi-select__item:after, .corgi-form__row:after, .corgi-form__inline:after {
+  clear: both;
+}
+
+.corgi-input__icon:after, .corgi-input__addon:after {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+/**
+ *  生成和颜色相关的属性
+ */
+.corgi-row {
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.corgi-row__flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.corgi-row__flex.corgi-row:before, .corgi-row__flex.corgi-row:after {
+  display: none;
+}
+.corgi-row__flex.justify-start {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+.corgi-row__flex.justify-center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.corgi-row__flex.justify-end {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+.corgi-row__flex.justify-space-around {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+.corgi-row__flex.justify-space-between {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.corgi-row__flex.align-baseline {
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+.corgi-row__flex.align-top {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+.corgi-row__flex.align-center {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.corgi-row__flex.align-bottom {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+.corgi-row__flex.align-stretch {
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+/**
+ *  Col组件样式
+ *  Created @ 2017-07-30 17:49:43
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  组件样式配置文件
+ *  Created @ 2017-07-30 17:51:17
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  params
+ *  Created @ 2017-07-20 00:37:42
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  颜色变量 start
+ */
+/**
+ *  颜色变量 end
+ */
+/**
+ *  层级关系
+ */
+.corgi-row:before, .corgi-btn-group:before, .corgi-select__list .corgi-select__item:before, .corgi-form__row:before, .corgi-form__inline:before, .corgi-row:after, .corgi-btn-group:after, .corgi-select__list .corgi-select__item:after, .corgi-form__row:after, .corgi-form__inline:after {
+  content: '';
+  display: table;
+  line-height: 0;
+}
+.corgi-row:after, .corgi-btn-group:after, .corgi-select__list .corgi-select__item:after, .corgi-form__row:after, .corgi-form__inline:after {
+  clear: both;
+}
+
+.corgi-input__icon:after, .corgi-input__addon:after {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+/**
+ *  生成和颜色相关的属性
+ */
+.corgi-col {
+  float: left;
+}
+
+.corgi-col-1 {
+  width: 8.33333%;
+}
+
+.corgi-offset-1 {
+  margin-left: 8.33333%;
+}
+
+.corgi-push-1 {
+  position: relative;
+  left: 8.33333%;
+}
+
+.corgi-pull-1 {
+  position: relative;
+  right: 8.33333%;
+}
+
+.corgi-col-2 {
+  width: 16.66667%;
+}
+
+.corgi-offset-2 {
+  margin-left: 16.66667%;
+}
+
+.corgi-push-2 {
+  position: relative;
+  left: 16.66667%;
+}
+
+.corgi-pull-2 {
+  position: relative;
+  right: 16.66667%;
+}
+
+.corgi-col-3 {
+  width: 25%;
+}
+
+.corgi-offset-3 {
+  margin-left: 25%;
+}
+
+.corgi-push-3 {
+  position: relative;
+  left: 25%;
+}
+
+.corgi-pull-3 {
+  position: relative;
+  right: 25%;
+}
+
+.corgi-col-4 {
+  width: 33.33333%;
+}
+
+.corgi-offset-4 {
+  margin-left: 33.33333%;
+}
+
+.corgi-push-4 {
+  position: relative;
+  left: 33.33333%;
+}
+
+.corgi-pull-4 {
+  position: relative;
+  right: 33.33333%;
+}
+
+.corgi-col-5 {
+  width: 41.66667%;
+}
+
+.corgi-offset-5 {
+  margin-left: 41.66667%;
+}
+
+.corgi-push-5 {
+  position: relative;
+  left: 41.66667%;
+}
+
+.corgi-pull-5 {
+  position: relative;
+  right: 41.66667%;
+}
+
+.corgi-col-6 {
+  width: 50%;
+}
+
+.corgi-offset-6 {
+  margin-left: 50%;
+}
+
+.corgi-push-6 {
+  position: relative;
+  left: 50%;
+}
+
+.corgi-pull-6 {
+  position: relative;
+  right: 50%;
+}
+
+.corgi-col-7 {
+  width: 58.33333%;
+}
+
+.corgi-offset-7 {
+  margin-left: 58.33333%;
+}
+
+.corgi-push-7 {
+  position: relative;
+  left: 58.33333%;
+}
+
+.corgi-pull-7 {
+  position: relative;
+  right: 58.33333%;
+}
+
+.corgi-col-8 {
+  width: 66.66667%;
+}
+
+.corgi-offset-8 {
+  margin-left: 66.66667%;
+}
+
+.corgi-push-8 {
+  position: relative;
+  left: 66.66667%;
+}
+
+.corgi-pull-8 {
+  position: relative;
+  right: 66.66667%;
+}
+
+.corgi-col-9 {
+  width: 75%;
+}
+
+.corgi-offset-9 {
+  margin-left: 75%;
+}
+
+.corgi-push-9 {
+  position: relative;
+  left: 75%;
+}
+
+.corgi-pull-9 {
+  position: relative;
+  right: 75%;
+}
+
+.corgi-col-10 {
+  width: 83.33333%;
+}
+
+.corgi-offset-10 {
+  margin-left: 83.33333%;
+}
+
+.corgi-push-10 {
+  position: relative;
+  left: 83.33333%;
+}
+
+.corgi-pull-10 {
+  position: relative;
+  right: 83.33333%;
+}
+
+.corgi-col-11 {
+  width: 91.66667%;
+}
+
+.corgi-offset-11 {
+  margin-left: 91.66667%;
+}
+
+.corgi-push-11 {
+  position: relative;
+  left: 91.66667%;
+}
+
+.corgi-pull-11 {
+  position: relative;
+  right: 91.66667%;
+}
+
+.corgi-col-12 {
+  width: 100%;
+}
+
+.corgi-offset-12 {
+  margin-left: 100%;
+}
+
+.corgi-push-12 {
+  position: relative;
+  left: 100%;
+}
+
+.corgi-pull-12 {
+  position: relative;
+  right: 100%;
+}
+
+/**
+ *  Button组件样式
+ *  Created @ 2017-08-03 23:40:09
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  params
+ *  Created @ 2017-07-20 00:37:42
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  颜色变量 start
+ */
+/**
+ *  颜色变量 end
+ */
+/**
+ *  层级关系
+ */
+/**
+ *  组件样式配置文件
+ *  Created @ 2017-07-30 17:51:17
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  params
+ *  Created @ 2017-07-20 00:37:42
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  颜色变量 start
+ */
+/**
+ *  颜色变量 end
+ */
+/**
+ *  层级关系
+ */
+.corgi-row:before, .corgi-btn-group:before, .corgi-select__list .corgi-select__item:before, .corgi-form__row:before, .corgi-form__inline:before, .corgi-row:after, .corgi-btn-group:after, .corgi-select__list .corgi-select__item:after, .corgi-form__row:after, .corgi-form__inline:after {
+  content: '';
+  display: table;
+  line-height: 0;
+}
+.corgi-row:after, .corgi-btn-group:after, .corgi-select__list .corgi-select__item:after, .corgi-form__row:after, .corgi-form__inline:after {
+  clear: both;
+}
+
+.corgi-input__icon:after, .corgi-input__addon:after {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+/**
+ *  生成和颜色相关的属性
+ */
+.corgi-btn {
+  display: inline-block;
+  margin: 0;
+  padding: 7px 12px;
+  line-height: 1;
+  border: 1px solid #e6e6e6;
+  border-radius: 3px;
+  background-color: #fff;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  outline: none;
+  white-space: nowrap;
+  color: #333;
+  cursor: pointer;
+  -webkit-appearance: none;
+  font-size: 14px;
+  text-align: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transition: all linear .2s;
+  transition: all linear .2s;
+}
+.corgi-btn__default:hover {
+  background-color: #fafafa;
+  color: #666;
+}
+.corgi-btn__default.corgi-btn__primary:hover {
+  background-color: #fff;
+  color: #57a3f1;
+  border-color: #57a3f1;
+}
+.corgi-btn__default.corgi-btn__info:hover {
+  background-color: #fff;
+  color: #88c3ff;
+  border-color: #88c3ff;
+}
+.corgi-btn__default.corgi-btn__success:hover {
+  background-color: #fff;
+  color: #5bd18b;
+  border-color: #5bd18b;
+}
+.corgi-btn__default.corgi-btn__warning:hover {
+  background-color: #fff;
+  color: #ffc349;
+  border-color: #ffc349;
+}
+.corgi-btn__default.corgi-btn__error:hover {
+  background-color: #fff;
+  color: #ff7979;
+  border-color: #ff7979;
+}
+.corgi-btn__status {
+  color: #fff;
+  background-color: #57a3f1;
+  border-color: #57a3f1;
+}
+.corgi-btn__status:hover {
+  background-color: #4491e1;
+  border-color: #4491e1;
+}
+.corgi-btn__status.corgi-btn__primary {
+  color: #fff;
+  background-color: #57a3f1;
+  border-color: #57a3f1;
+}
+.corgi-btn__status.corgi-btn__primary:hover {
+  background-color: #4491e1;
+  border-color: #4491e1;
+}
+.corgi-btn__status.corgi-btn__info {
+  color: #fff;
+  background-color: #88c3ff;
+  border-color: #88c3ff;
+}
+.corgi-btn__status.corgi-btn__info:hover {
+  background-color: #7ab9fa;
+  border-color: #7ab9fa;
+}
+.corgi-btn__status.corgi-btn__success {
+  color: #fff;
+  background-color: #5bd18b;
+  border-color: #5bd18b;
+}
+.corgi-btn__status.corgi-btn__success:hover {
+  background-color: #33c16f;
+  border-color: #33c16f;
+}
+.corgi-btn__status.corgi-btn__warning {
+  color: #fff;
+  background-color: #ffc349;
+  border-color: #ffc349;
+}
+.corgi-btn__status.corgi-btn__warning:hover {
+  background-color: #ffb726;
+  border-color: #ffb726;
+}
+.corgi-btn__status.corgi-btn__error {
+  color: #fff;
+  background-color: #ff7979;
+  border-color: #ff7979;
+}
+.corgi-btn__status.corgi-btn__error:hover {
+  background-color: #fd6154;
+  border-color: #fd6154;
+}
+.corgi-btn__custom {
+  opacity: .7;
+}
+.corgi-btn__custom:hover {
+  opacity: 1;
+}
+.corgi-btn__text {
+  padding: 0;
+  border: 0;
+  opacity: .7;
+}
+.corgi-btn__text:hover {
+  opacity: 1;
+}
+.corgi-btn [class*="icon-"] {
+  font-size: 14px;
+}
+.corgi-btn [class*="icon-"] + span {
+  margin-left: 3px;
+}
+.corgi-btn__loading {
+  position: relative;
+  cursor: default;
+  pointer-events: none;
+}
+.corgi-btn__loading:after {
+  content: '';
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  bottom: -1px;
+  left: -1px;
+  background-color: rgba(255, 255, 255, 0.35);
+  border-color: rgba(255, 255, 255, 0.35);
+  pointer-events: none;
+}
+.corgi-btn[disabled], .corgi-btn[disabled]:hover {
+  background-color: #fff;
+  border-color: #e6e6e6;
+  cursor: not-allowed;
+  opacity: .7;
+  color: #666;
+}
+.corgi-btn[disabled].corgi-btn__status {
+  background-color: #e6e6e6 !important;
+  border-color: #f5f5f5 !important;
+  color: #fff !important;
+  opacity: 1;
+}
+.corgi-btn__xs {
+  padding: 2px;
+  font-size: 12px;
+}
+.corgi-btn__s {
+  padding: 5px 8px;
+  font-size: 12px;
+}
+.corgi-btn__l {
+  padding: 10px 15px;
+  font-size: 16px;
+}
+.corgi-btn__xl {
+  padding: 15px 20px;
+  font-size: 18px;
+}
+.corgi-btn-group {
+  display: inline-block;
+}
+.corgi-btn-group > .corgi-btn:first-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.corgi-btn-group > .corgi-btn:not(:first-child) {
+  margin-left: -1px;
+}
+.corgi-btn-group > .corgi-btn:last-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.corgi-btn-group > .corgi-btn + .corgi-btn:not(:last-child) {
+  border-radius: 0;
+}
+.corgi-btn-group > .corgi-btn__status:not(:first-child) {
+  border-left-color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/**
+ *  Radio样式
+ *  Created @ 2017-08-11 20:28:52
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  组件库公用样式
+ *  Created @ 2017-08-01 00:01:18
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  params
+ *  Created @ 2017-07-20 00:37:42
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  颜色变量 start
+ */
+/**
+ *  颜色变量 end
+ */
+/**
+ *  层级关系
+ */
+/**
+ *  组件样式配置文件
+ *  Created @ 2017-07-30 17:51:17
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  params
+ *  Created @ 2017-07-20 00:37:42
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  颜色变量 start
+ */
+/**
+ *  颜色变量 end
+ */
+/**
+ *  层级关系
+ */
+.corgi-row:before, .corgi-btn-group:before, .corgi-select__list .corgi-select__item:before, .corgi-form__row:before, .corgi-form__inline:before, .corgi-row:after, .corgi-btn-group:after, .corgi-select__list .corgi-select__item:after, .corgi-form__row:after, .corgi-form__inline:after {
+  content: '';
+  display: table;
+  line-height: 0;
+}
+.corgi-row:after, .corgi-btn-group:after, .corgi-select__list .corgi-select__item:after, .corgi-form__row:after, .corgi-form__inline:after {
+  clear: both;
+}
+
+.corgi-input__icon:after, .corgi-input__addon:after {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+/**
+ *  生成和颜色相关的属性
+ */
+/**
+ *  组件样式配置文件
+ *  Created @ 2017-07-30 17:51:17
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  params
+ *  Created @ 2017-07-20 00:37:42
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  颜色变量 start
+ */
+/**
+ *  颜色变量 end
+ */
+/**
+ *  层级关系
+ */
+.corgi-row:before, .corgi-btn-group:before, .corgi-select__list .corgi-select__item:before, .corgi-form__row:before, .corgi-form__inline:before, .corgi-row:after, .corgi-btn-group:after, .corgi-select__list .corgi-select__item:after, .corgi-form__row:after, .corgi-form__inline:after {
+  content: '';
+  display: table;
+  line-height: 0;
+}
+.corgi-row:after, .corgi-btn-group:after, .corgi-select__list .corgi-select__item:after, .corgi-form__row:after, .corgi-form__inline:after {
+  clear: both;
+}
+
+.corgi-input__icon:after, .corgi-input__addon:after {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+/**
+ *  生成和颜色相关的属性
+ */
+.corgi-radio {
+  position: relative;
+  cursor: pointer;
+}
+.corgi-radio:hover .corgi-radio__selector {
+  border-color: #57a3f1;
+}
+.corgi-radio:hover .corgi-radio__selector.is-checked {
+  background-color: #4491e1;
+  border-color: #4491e1;
+}
+.corgi-radio:hover .disabled, .corgi-radio:hover .disabled + .corgi-radio__label {
+  cursor: not-allowed;
+}
+.corgi-radio:hover .disabled.corgi-radio__selector {
+  border-color: #e6e6e6;
+}
+.corgi-radio:hover .disabled.corgi-radio__selector.is-checked {
+  background-color: #b2beca;
+  border-color: #b2beca;
+}
+.corgi-radio__selector {
+  position: relative;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #e6e6e6;
+  border-radius: 50%;
+  -webkit-box-shadow: inset 0 0 2px 0.5px rgba(0, 0, 0, 0.05);
+          box-shadow: inset 0 0 2px 0.5px rgba(0, 0, 0, 0.05);
+  vertical-align: text-top;
+  -webkit-transition: all linear 0.2s;
+  transition: all linear 0.2s;
+}
+.corgi-radio__selector:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 3px;
+  width: 3px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  background-color: #fff;
+  -webkit-transform: translate(-50%, -50%) rotate(45deg) scaleY(0);
+          transform: translate(-50%, -50%) rotate(45deg) scaleY(0);
+}
+.corgi-radio__selector.is-checked {
+  background-color: #57a3f1;
+  border-color: #57a3f1;
+}
+.corgi-radio__selector.is-checked:after {
+  -webkit-transform: translate(-50%, -50%) rotate(45deg) scaleY(1);
+          transform: translate(-50%, -50%) rotate(45deg) scaleY(1);
+}
+.corgi-radio__selector.disabled {
+  border-color: #e6e6e6;
+}
+.corgi-radio__selector.disabled.is-checked {
+  background-color: #b2beca;
+  border-color: #b2beca;
+}
+.corgi-radio__selector.disabled + .corgi-radio__label {
+  color: #ccc;
+}
+.corgi-radio__label {
+  padding-left: 5px;
+}
+.corgi-radio__group {
+  display: inline-block;
+}
+.corgi-radio__group .corgi-radio__button-el {
+  display: none;
+}
+.corgi-radio__group.corgi-radio__group-xs .corgi-radio__button {
+  padding: 2px;
+  font-size: 12px;
+}
+.corgi-radio__group.corgi-radio__group-s .corgi-radio__button {
+  padding: 5px 8px;
+  font-size: 13px;
+}
+.corgi-radio__group.corgi-radio__group-l .corgi-radio__button {
+  padding: 10px 15px;
+  font-size: 16px;
+}
+.corgi-radio__group.corgi-radio__group-xl .corgi-radio__button {
+  padding: 15px 20px;
+  font-size: 18px;
+}
+.corgi-radio__button {
+  display: inline-block;
+  padding: 7px 12px;
+  border: 1px solid #e6e6e6;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.corgi-radio__button:hover {
+  color: #57a3f1;
+}
+.corgi-radio__button.is-checked {
+  border-color: #57a3f1;
+  background-color: #57a3f1;
+  color: #fff;
+}
+.corgi-radio__button.is-checked:hover {
+  background-color: #4491e1;
+}
+.corgi-radio__button.disabled {
+  border-color: #999;
+  background-color: #f5f5f5;
+  color: #999;
+  cursor: not-allowed;
+}
+.corgi-radio__button.disabled.is-checked {
+  border-color: #999;
+}
+.corgi-radio__button.disabled.is-checked:hover {
+  background-color: #f5f5f5;
+}
+.corgi-radio__button.disabled + .corgi-radio__button {
+  border-left-color: #999;
+}
+.corgi-radio__button + .corgi-radio__button {
+  margin-left: -1px;
+  border-radius: 0;
+}
+.corgi-radio__button + .corgi-radio__button:last-child {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+.corgi-radio .corgi-origin-el {
+  display: none;
+}
+.corgi-radio + .corgi-radio {
+  margin-left: 10px;
+}
+
+/**
+ *  Checkbox样式
+ *  Created @ 2017-08-11 20:27:45
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  params
+ *  Created @ 2017-07-20 00:37:42
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  颜色变量 start
+ */
+/**
+ *  颜色变量 end
+ */
+/**
+ *  层级关系
+ */
+/**
+ *  组件样式配置文件
+ *  Created @ 2017-07-30 17:51:17
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  params
+ *  Created @ 2017-07-20 00:37:42
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  颜色变量 start
+ */
+/**
+ *  颜色变量 end
+ */
+/**
+ *  层级关系
+ */
+.corgi-row:before, .corgi-btn-group:before, .corgi-select__list .corgi-select__item:before, .corgi-form__row:before, .corgi-form__inline:before, .corgi-row:after, .corgi-btn-group:after, .corgi-select__list .corgi-select__item:after, .corgi-form__row:after, .corgi-form__inline:after {
+  content: '';
+  display: table;
+  line-height: 0;
+}
+.corgi-row:after, .corgi-btn-group:after, .corgi-select__list .corgi-select__item:after, .corgi-form__row:after, .corgi-form__inline:after {
+  clear: both;
+}
+
+.corgi-input__icon:after, .corgi-input__addon:after {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+/**
+ *  生成和颜色相关的属性
+ */
+.corgi-checkbox {
+  position: relative;
+  cursor: pointer;
+}
+.corgi-checkbox:hover .corgi-checkbox__selector {
+  border-color: #57a3f1;
+}
+.corgi-checkbox:hover .corgi-checkbox__selector.checked {
+  background-color: #4491e1;
+  border-color: #4491e1;
+}
+.corgi-checkbox:hover .disabled, .corgi-checkbox:hover .disabled + .corgi-checkbox__label {
+  cursor: not-allowed;
+}
+.corgi-checkbox:hover .disabled.corgi-checkbox__selector {
+  border-color: #e6e6e6;
+}
+.corgi-checkbox:hover .disabled.corgi-checkbox__selector.checked {
+  background-color: #b2beca;
+  border-color: #b2beca;
+}
+.corgi-checkbox__selector {
+  position: relative;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #e6e6e6;
+  border-radius: 3px;
+  -webkit-box-shadow: inset 0 0 2px 0.5px rgba(0, 0, 0, 0.05);
+          box-shadow: inset 0 0 2px 0.5px rgba(0, 0, 0, 0.05);
+  vertical-align: text-top;
+  -webkit-transition: all linear 0.2s;
+  transition: all linear 0.2s;
+}
+.corgi-checkbox__selector:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 2px solid #fff;
+  height: 6px;
+  width: 3px;
+  border-top: 0;
+  border-left: 0;
+  -webkit-transform: translate(-50%, -60%) rotate(45deg) scaleY(0);
+          transform: translate(-50%, -60%) rotate(45deg) scaleY(0);
+  -webkit-transform-origin: center;
+          transform-origin: center;
+}
+.corgi-checkbox__selector.checked {
+  background-color: #57a3f1;
+  border-color: #57a3f1;
+}
+.corgi-checkbox__selector.checked:after {
+  -webkit-transform: translate(-50%, -60%) rotate(45deg) scaleY(1);
+          transform: translate(-50%, -60%) rotate(45deg) scaleY(1);
+}
+.corgi-checkbox__selector.indeterminate {
+  background-color: #57a3f1;
+  border-color: #57a3f1;
+}
+.corgi-checkbox__selector.indeterminate:after {
+  top: calc(50% - 1px);
+  border-bottom: 0;
+  -webkit-transform: translate(-50%, -50%) rotate(90deg) scaleY(1);
+          transform: translate(-50%, -50%) rotate(90deg) scaleY(1);
+}
+.corgi-checkbox__selector.disabled {
+  border-color: #e6e6e6;
+}
+.corgi-checkbox__selector.disabled.checked {
+  background-color: #b2beca;
+  border-color: #b2beca;
+}
+.corgi-checkbox__selector.disabled + .corgi-checkbox__label {
+  color: #ccc;
+}
+.corgi-checkbox__label {
+  padding-left: 5px;
+}
+.corgi-checkbox .corgi-origin-el {
+  display: none;
+}
+.corgi-checkbox + .corgi-checkbox {
+  margin-left: 10px;
+}
+
+/**
+ *  Input样式
+ *  Created @ 2017-08-22 00:54:02
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  params
+ *  Created @ 2017-07-20 00:37:42
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  颜色变量 start
+ */
+/**
+ *  颜色变量 end
+ */
+/**
+ *  层级关系
+ */
+/**
+ *  组件样式配置文件
+ *  Created @ 2017-07-30 17:51:17
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  params
+ *  Created @ 2017-07-20 00:37:42
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  颜色变量 start
+ */
+/**
+ *  颜色变量 end
+ */
+/**
+ *  层级关系
+ */
+.corgi-row:before, .corgi-btn-group:before, .corgi-select__list .corgi-select__item:before, .corgi-form__row:before, .corgi-form__inline:before, .corgi-row:after, .corgi-btn-group:after, .corgi-select__list .corgi-select__item:after, .corgi-form__row:after, .corgi-form__inline:after {
+  content: '';
+  display: table;
+  line-height: 0;
+}
+.corgi-row:after, .corgi-btn-group:after, .corgi-select__list .corgi-select__item:after, .corgi-form__row:after, .corgi-form__inline:after {
+  clear: both;
+}
+
+.corgi-input__icon:after, .corgi-input__addon:after {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+/**
+ *  生成和颜色相关的属性
+ */
+.corgi-input {
+  position: relative;
+  width: 100%;
+  height: 36px;
+  font-size: 14px;
+}
+.corgi-input.corgi-input__large {
+  height: 40px;
+  font-size: 18px;
+}
+.corgi-input.corgi-input__small {
+  height: 32px;
+  font-size: 13px;
+}
+.corgi-input.corgi-input__mini {
+  height: 28px;
+  font-size: 14px;
+}
+.corgi-input__wrapper {
+  display: table;
+}
+.corgi-input__el {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0 10px;
+  border: 1px solid #e6e6e6;
+  border-radius: 5px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-image: none;
+  background-color: #fff;
+  font-size: inherit;
+  -webkit-transition: border-color .2s linear;
+  transition: border-color .2s linear;
+  color: #333;
+}
+.corgi-input__el:hover {
+  border-color: #b2beca;
+}
+.corgi-input__el:focus {
+  border-color: #57a3f1;
+}
+.corgi-input__el::-webkit-input-placeholder {
+  color: #ccc;
+}
+.corgi-input__el:-ms-input-placeholder {
+  color: #ccc;
+}
+.corgi-input__el::placeholder {
+  color: #ccc;
+}
+.corgi-input__el::input-placeholder {
+  color: #ccc;
+}
+.corgi-input__el[readonly]:hover, .corgi-input__el[readonly]:focus {
+  border-color: #e6e6e6;
+}
+.corgi-input__el[disabled] {
+  background-color: #f5f5f5;
+  cursor: not-allowed;
+  color: #999;
+}
+.corgi-input__el[disabled]:hover {
+  border-color: #e6e6e6;
+}
+.corgi-input__icon {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 36px;
+  text-align: center;
+}
+.corgi-input__icon.icon-left {
+  left: 0;
+}
+.corgi-input__icon.icon-left + .corgi-input__el {
+  padding-left: 36px;
+}
+.corgi-input__icon.icon-right {
+  right: 0;
+}
+.corgi-input__icon.icon-right + .corgi-input__el {
+  padding-right: 36px;
+}
+.corgi-input__addon {
+  display: table-cell;
+  width: 1px;
+  padding: 0 7px;
+  border: 1px solid #e6e6e6;
+  background-color: #f5f5f5;
+  color: #b2beca;
+}
+.corgi-input__addon.corgi-preaddon {
+  border-right: none;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.corgi-input__addon.corgi-preaddon + .corgi-input__el {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.corgi-input__addon.corgi-postaddon {
+  border-left: none;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.corgi-wrapper__postaddon .corgi-input__el {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.corgi-textarea {
+  font-size: 14px;
+}
+.corgi-textarea__el {
+  display: block;
+  resize: vertical;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #e6e6e6;
+  border-radius: 5px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-image: none;
+  background-color: #fff;
+  font-size: inherit;
+  -webkit-transition: border-color .2s linear;
+  transition: border-color .2s linear;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #666;
+}
+.corgi-textarea__el:hover {
+  border-color: #b2beca;
+}
+.corgi-textarea__el:focus {
+  border-color: #57a3f1;
+}
+.corgi-textarea__el::-webkit-input-placeholder {
+  color: #ccc;
+}
+.corgi-textarea__el:-ms-input-placeholder {
+  color: #ccc;
+}
+.corgi-textarea__el::placeholder {
+  color: #ccc;
+}
+.corgi-textarea__el::input-placeholder {
+  color: #ccc;
+}
+.corgi-textarea__both {
+  width: auto;
+  resize: both;
+}
+.corgi-textarea__horizontal {
+  width: auto;
+  resize: horizontal;
+}
+.corgi-textarea__none {
+  resize: none;
+}
+
+/**
+ *  Table样式
+ *  Created @ 2017-08-28 20:20:48
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  params
+ *  Created @ 2017-07-20 00:37:42
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  颜色变量 start
+ */
+/**
+ *  颜色变量 end
+ */
+/**
+ *  层级关系
+ */
+/**
+ *  组件样式配置文件
+ *  Created @ 2017-07-30 17:51:17
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  params
+ *  Created @ 2017-07-20 00:37:42
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  颜色变量 start
+ */
+/**
+ *  颜色变量 end
+ */
+/**
+ *  层级关系
+ */
+.corgi-row:before, .corgi-btn-group:before, .corgi-select__list .corgi-select__item:before, .corgi-form__row:before, .corgi-form__inline:before, .corgi-row:after, .corgi-btn-group:after, .corgi-select__list .corgi-select__item:after, .corgi-form__row:after, .corgi-form__inline:after {
+  content: '';
+  display: table;
+  line-height: 0;
+}
+.corgi-row:after, .corgi-btn-group:after, .corgi-select__list .corgi-select__item:after, .corgi-form__row:after, .corgi-form__inline:after {
+  clear: both;
+}
+
+.corgi-input__icon:after, .corgi-input__addon:after {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+/**
+ *  生成和颜色相关的属性
+ */
+/**
+ *  生成状态相关的属性
+ **/
+.corgi-table {
+  width: 100%;
+  border: 1px solid #e6e6e6;
+}
+.corgi-table__bordered > .corgi-table__header > tr > th {
+  border-right: 1px solid #e6e6e6;
+}
+.corgi-table__bordered > .corgi-table__header > tr > th:last-child {
+  border-right: none;
+}
+.corgi-table__bordered > .corgi-table__body > tr > td {
+  border-right: 1px solid #e6e6e6;
+}
+.corgi-table__bordered > .corgi-table__body > tr:last-child {
+  border-right: none;
+}
+.corgi-table__stripe > .corgi-table__body > tr:nth-of-type(even) > td {
+  background-color: #f5f5f5;
+}
+.corgi-table__hover .corgi-table__body > tr:hover {
+  background-color: #e6e6e6;
+}
+.corgi-table .corgi-table__header > tr {
+  background-color: #e6e6e6;
+}
+.corgi-table .corgi-table__header > tr > th {
+  padding: 10px 15px;
+  border-bottom: 1px solid #e6e6e6;
+  font-size: 14px;
+  text-align: left;
+}
+.corgi-table .corgi-table__body.corgi-table__empty > tr:hover {
+  background-color: transparent;
+}
+.corgi-table .corgi-table__body.corgi-table__empty > tr > td {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+.corgi-table .corgi-table__body > tr.corgi-table__expand-row, .corgi-table .corgi-table__body > tr.corgi-table__expand-row:hover {
+  background-color: #f5f5f5;
+}
+.corgi-table .corgi-table__body > tr.corgi-table__expand-row.hidden {
+  display: none;
+}
+.corgi-table .corgi-table__body > tr > td {
+  padding: 10px 15px;
+  border-bottom: 1px solid #e6e6e6;
+}
+.corgi-table .corgi-table__body > tr > td.corgi-table__expand-icon {
+  width: 30px;
+  padding-left: 5px;
+  padding-right: 5px;
+  text-align: center;
+  cursor: pointer;
+}
+.corgi-table .corgi-table__body > tr:last-child {
+  border-bottom: none;
+}
+.corgi-table .corgi-table__body > tr.primary {
+  background-color: #57a3f1;
+  color: #fff;
+}
+.corgi-table .corgi-table__body > tr.primary:hover {
+  background-color: #4491e1;
+}
+.corgi-table .corgi-table__body > tr.info {
+  background-color: #88c3ff;
+  color: #fff;
+}
+.corgi-table .corgi-table__body > tr.info:hover {
+  background-color: #7ab9fa;
+}
+.corgi-table .corgi-table__body > tr.success {
+  background-color: #5bd18b;
+  color: #fff;
+}
+.corgi-table .corgi-table__body > tr.success:hover {
+  background-color: #33c16f;
+}
+.corgi-table .corgi-table__body > tr.warning {
+  background-color: #ffc349;
+  color: #fff;
+}
+.corgi-table .corgi-table__body > tr.warning:hover {
+  background-color: #ffb726;
+}
+.corgi-table .corgi-table__body > tr.error {
+  background-color: #ff7979;
+  color: #fff;
+}
+.corgi-table .corgi-table__body > tr.error:hover {
+  background-color: #fd6154;
+}
+
+/**
+ *  Select样式
+ *  Created @ 2017-08-30 16:24:37
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  params
+ *  Created @ 2017-07-20 00:37:42
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  颜色变量 start
+ */
+/**
+ *  颜色变量 end
+ */
+/**
+ *  层级关系
+ */
+/**
+ *  组件样式配置文件
+ *  Created @ 2017-07-30 17:51:17
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  params
+ *  Created @ 2017-07-20 00:37:42
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  颜色变量 start
+ */
+/**
+ *  颜色变量 end
+ */
+/**
+ *  层级关系
+ */
+.corgi-row:before, .corgi-btn-group:before, .corgi-select__list .corgi-select__item:before, .corgi-form__row:before, .corgi-form__inline:before, .corgi-row:after, .corgi-btn-group:after, .corgi-select__list .corgi-select__item:after, .corgi-form__row:after, .corgi-form__inline:after {
+  content: '';
+  display: table;
+  line-height: 0;
+}
+.corgi-row:after, .corgi-btn-group:after, .corgi-select__list .corgi-select__item:after, .corgi-form__row:after, .corgi-form__inline:after {
+  clear: both;
+}
+
+.corgi-input__icon:after, .corgi-input__addon:after {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+/**
+ *  生成和颜色相关的属性
+ */
+.corgi-select {
+  position: relative;
+  width: 100%;
+  height: 36px;
+}
+.corgi-select__wrapper {
+  position: relative;
+  height: 100%;
+}
+.corgi-select__wrapper .corgi-select__icon {
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  -webkit-transform: translateY(-50%) rotate(0);
+          transform: translateY(-50%) rotate(0);
+  -webkit-transition: all linear .2s;
+  transition: all linear .2s;
+  font-size: 12px;
+  color: #e6e6e6;
+}
+.corgi-select__wrapper .corgi-select__icon.expanded {
+  -webkit-transform: translateY(-50%) rotate(180deg);
+          transform: translateY(-50%) rotate(180deg);
+}
+.corgi-select__el .corgi-input__el {
+  cursor: pointer;
+}
+.corgi-select__el .corgi-input__el:hover {
+  border-color: #b2beca;
+}
+.corgi-select__el:hover + .corgi-select__icon {
+  color: #b2beca;
+}
+.corgi-select__list {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  right: 0;
+  border: 1px solid #e6e6e6;
+  border-radius: 3px;
+  background-color: #fff;
+  -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+.corgi-select__list.hidden {
+  display: none;
+}
+.corgi-select__list .corgi-select__item {
+  line-height: 36px;
+  padding: 0 10px;
+  cursor: pointer;
+  color: #666;
+}
+.corgi-select__list .corgi-select__item:hover {
+  background-color: #f5f5f5;
+}
+.corgi-select__list .corgi-select__item.disabled {
+  color: #b2beca;
+  cursor: not-allowed;
+}
+.corgi-select__list .corgi-select__item.disabled:hover {
+  background-color: transparent;
+}
+.corgi-select__list .corgi-select__item.selected {
+  background-color: #57a3f1;
+  color: #fff;
+}
+.corgi-select__list .corgi-select__item.selected:hover {
+  background-color: #4491e1;
+}
+.corgi-select__list .corgi-select__item .icon-corgi-check {
+  display: none;
+  float: right;
+  line-height: 36px;
+}
+.corgi-select__disabled .corgi-input__el {
+  cursor: not-allowed;
+}
+.corgi-select__disabled .corgi-input__el:hover {
+  border-color: #e6e6e6;
+}
+.corgi-select__disabled .corgi-select__el + .corgi-select__icon {
+  color: #e6e6e6;
+  cursor: not-allowed;
+}
+.corgi-select__clear:hover > .clear-icon {
+  border-radius: 50%;
+  background-color: #e6e6e6;
+  color: #fff;
+  cursor: pointer;
+  -webkit-transition: none;
+  transition: none;
+}
+.corgi-select__clear:hover > .clear-icon:hover {
+  background-color: #b2beca;
+}
+.corgi-select__multiple .corgi-select__item.selected {
+  background-color: transparent;
+  color: #57a3f1;
+}
+.corgi-select__multiple .corgi-select__item.selected:hover {
+  background-color: #f5f5f5;
+}
+.corgi-select__multiple .corgi-select__item.selected .icon-corgi-check {
+  display: block;
+}
+.corgi-select__multiple-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 15px;
+  padding: 6px 0 0 10px;
+}
+.corgi-select__multiple-wrapper .corgi-tag {
+  margin-right: 5px;
+  margin-bottom: 6px;
+}
+.corgi-select.corgi-select__editable .corgi-select__el:focus {
+  border-color: #57a3f1;
+}
+
+/**
+ *  Form组件样式
+ *  Created @ 2017-09-07 00:17:05
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  params
+ *  Created @ 2017-07-20 00:37:42
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  颜色变量 start
+ */
+/**
+ *  颜色变量 end
+ */
+/**
+ *  层级关系
+ */
+/**
+ *  组件样式配置文件
+ *  Created @ 2017-07-30 17:51:17
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  params
+ *  Created @ 2017-07-20 00:37:42
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  颜色变量 start
+ */
+/**
+ *  颜色变量 end
+ */
+/**
+ *  层级关系
+ */
+.corgi-row:before, .corgi-btn-group:before, .corgi-select__list .corgi-select__item:before, .corgi-form__row:before, .corgi-form__inline:before, .corgi-row:after, .corgi-btn-group:after, .corgi-select__list .corgi-select__item:after, .corgi-form__row:after, .corgi-form__inline:after {
+  content: '';
+  display: table;
+  line-height: 0;
+}
+.corgi-row:after, .corgi-btn-group:after, .corgi-select__list .corgi-select__item:after, .corgi-form__row:after, .corgi-form__inline:after {
+  clear: both;
+}
+
+.corgi-input__icon:after, .corgi-input__addon:after {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+/**
+ *  生成和颜色相关的属性
+ */
+.corgi-form__row {
+  margin-bottom: 20px;
+}
+.corgi-form__row:last-child {
+  margin-bottom: 0;
+}
+.corgi-form__label {
+  float: left;
+  padding: 11px 10px 11px 0;
+  line-height: 1;
+  font-size: 14px;
+  min-width: 80px;
+  color: #666;
+}
+.corgi-form__label-required:before {
+  content: '* ';
+  color: #ff7979;
+  font-size: 14px;
+}
+.corgi-form__content {
+  min-height: 36px;
+  line-height: 36px;
+  margin-left: 80px;
+}
+.corgi-form.corgi-form__label-left .corgi-form__label {
+  text-align: left;
+}
+.corgi-form.corgi-form__label-center .corgi-form__label {
+  text-align: center;
+}
+.corgi-form.corgi-form__label-right .corgi-form__label {
+  text-align: right;
+}
+.corgi-form.corgi-form__label-top .corgi-form__label {
+  float: none;
+  padding: 0 0 5px 0;
+}
+.corgi-form__inline .corgi-form__row {
+  float: left;
+  margin-bottom: 0;
+  margin-right: 20px;
+}
+.corgi-form__inline .corgi-form__row:last-child {
+  margin-right: 0;
+}
+
+/**
+ *  Tag样式
+ *  Created @ 2017-09-02 10:18:12
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  params
+ *  Created @ 2017-07-20 00:37:42
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  颜色变量 start
+ */
+/**
+ *  颜色变量 end
+ */
+/**
+ *  层级关系
+ */
+/**
+ *  组件样式配置文件
+ *  Created @ 2017-07-30 17:51:17
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  params
+ *  Created @ 2017-07-20 00:37:42
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  颜色变量 start
+ */
+/**
+ *  颜色变量 end
+ */
+/**
+ *  层级关系
+ */
+.corgi-row:before, .corgi-btn-group:before, .corgi-select__list .corgi-select__item:before, .corgi-form__row:before, .corgi-form__inline:before, .corgi-row:after, .corgi-btn-group:after, .corgi-select__list .corgi-select__item:after, .corgi-form__row:after, .corgi-form__inline:after {
+  content: '';
+  display: table;
+  line-height: 0;
+}
+.corgi-row:after, .corgi-btn-group:after, .corgi-select__list .corgi-select__item:after, .corgi-form__row:after, .corgi-form__inline:after {
+  clear: both;
+}
+
+.corgi-input__icon:after, .corgi-input__addon:after {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+/**
+ *  生成和颜色相关的属性
+ */
+/**
+ *  生成状态相关的属性
+ **/
+.corgi-tag {
+  display: inline-block;
+  height: 24px;
+  line-height: 22px;
+  padding: 0 7px;
+  border-radius: 3px;
+  font-size: 12px;
+}
+.corgi-tag.primary {
+  background-color: #57a3f1;
+  border: 1px solid #4491e1;
+  color: #fff;
+}
+.corgi-tag.primary:hover {
+  background-color: #4491e1;
+}
+.corgi-tag.info {
+  background-color: #88c3ff;
+  border: 1px solid #7ab9fa;
+  color: #fff;
+}
+.corgi-tag.info:hover {
+  background-color: #7ab9fa;
+}
+.corgi-tag.success {
+  background-color: #5bd18b;
+  border: 1px solid #33c16f;
+  color: #fff;
+}
+.corgi-tag.success:hover {
+  background-color: #33c16f;
+}
+.corgi-tag.warning {
+  background-color: #ffc349;
+  border: 1px solid #ffb726;
+  color: #fff;
+}
+.corgi-tag.warning:hover {
+  background-color: #ffb726;
+}
+.corgi-tag.error {
+  background-color: #ff7979;
+  border: 1px solid #fd6154;
+  color: #fff;
+}
+.corgi-tag.error:hover {
+  background-color: #fd6154;
+}
+.corgi-tag__icon {
+  margin-left: 3px;
+  vertical-align: text-bottom;
+  font-size: 13px;
+}
+.corgi-tag__icon:hover {
+  cursor: pointer;
+}
+
+/**
+ *  Switch Style
+ *  Created @ 2017-09-08 19:03:39
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  params
+ *  Created @ 2017-07-20 00:37:42
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  颜色变量 start
+ */
+/**
+ *  颜色变量 end
+ */
+/**
+ *  层级关系
+ */
+/**
+ *  组件样式配置文件
+ *  Created @ 2017-07-30 17:51:17
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  params
+ *  Created @ 2017-07-20 00:37:42
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  颜色变量 start
+ */
+/**
+ *  颜色变量 end
+ */
+/**
+ *  层级关系
+ */
+.corgi-row:before, .corgi-btn-group:before, .corgi-select__list .corgi-select__item:before, .corgi-form__row:before, .corgi-form__inline:before, .corgi-row:after, .corgi-btn-group:after, .corgi-select__list .corgi-select__item:after, .corgi-form__row:after, .corgi-form__inline:after {
+  content: '';
+  display: table;
+  line-height: 0;
+}
+.corgi-row:after, .corgi-btn-group:after, .corgi-select__list .corgi-select__item:after, .corgi-form__row:after, .corgi-form__inline:after {
+  clear: both;
+}
+
+.corgi-input__icon:after, .corgi-input__addon:after {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+/**
+ *  生成和颜色相关的属性
+ */
+.corgi-switch {
+  position: relative;
+  display: inline-block;
+}
+.corgi-switch__el {
+  display: none;
+}
+.corgi-switch__trigger {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 26px;
+  border: 1px solid #5bd18b;
+  border-radius: 14px;
+  cursor: pointer;
+  background-color: #5bd18b;
+  -webkit-transition: border-color .3s, background-color .3s;
+  transition: border-color .3s, background-color .3s;
+}
+.corgi-switch__slider {
+  display: inline-block;
+  position: absolute;
+  top: 1px;
+  width: 22px;
+  height: 22px;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  background-color: #fff;
+  -webkit-transition: background-color .2s, -webkit-transform linear .2s;
+  transition: background-color .2s, -webkit-transform linear .2s;
+  transition: transform linear .2s, background-color .2s;
+  transition: transform linear .2s, background-color .2s, -webkit-transform linear .2s;
+  z-index: 1;
+}
+.corgi-switch__on .corgi-switch__slider {
+  -webkit-transform: translateX(35px);
+          transform: translateX(35px);
+}
+.corgi-switch__on .corgi-switch__label {
+  left: 0;
+}
+.corgi-switch__off .corgi-switch__trigger {
+  background-color: #e6e6e6;
+  border-color: #e6e6e6;
+}
+.corgi-switch__off .corgi-switch__slider {
+  -webkit-transform: translateX(1px);
+          transform: translateX(1px);
+}
+.corgi-switch__off .corgi-switch__label {
+  right: 0;
+}
+.corgi-switch__label {
+  position: absolute;
+  top: 50%;
+  width: 36px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-size: 12px;
+  color: #fff;
+  cursor: pointer;
+  text-align: center;
+}
+.corgi-switch__small .corgi-switch__trigger {
+  width: 44px;
+  height: 24px;
+  border-radius: 14px;
+}
+.corgi-switch__small .corgi-switch__slider {
+  width: 20px;
+  height: 20px;
+}
+.corgi-switch__small .corgi-switch__label {
+  width: 22px;
+}
+.corgi-switch__small.corgi-switch__on .corgi-switch__slider {
+  -webkit-transform: translateX(21px);
+          transform: translateX(21px);
+}
+.corgi-switch__square .corgi-switch__trigger, .corgi-switch__square .corgi-switch__slider {
+  border-radius: 3px;
+}
+.corgi-switch__hollow .corgi-switch__trigger {
+  background-color: transparent;
+}
+.corgi-switch__hollow .corgi-switch__slider {
+  border-color: #e6e6e6;
+}
+.corgi-switch__hollow.corgi-switch__on .corgi-switch__slider {
+  background-color: #5bd18b;
+  border-color: #5bd18b;
+}
+.corgi-switch__hollow.corgi-switch__on .corgi-switch__label {
+  color: #5bd18b;
+}
+.corgi-switch__hollow.corgi-switch__off .corgi-switch__label {
+  color: #e6e6e6;
+}
+
+.primary-bg {
+  background-color: #57a3f1;
+}
+
+.info-bg {
+  background-color: #88c3ff;
+}
+
+.important-dark-bg {
+  background-color: #4491e1;
+}
+
+.important-light-bg {
+  background-color: #e4edf7;
+}
+
+.success-bg {
+  background-color: #5bd18b;
+}
+
+.warning-bg {
+  background-color: #ffc349;
+}
+
+.attention-bg {
+  background-color: #ffa65f;
+}
+
+.error-bg {
+  background-color: #ff7979;
+}
+
+.black-bg {
+  background-color: #333;
+}
+
+.black-light-bg {
+  background-color: #666;
+}
+
+.grey-bg {
+  background-color: #999;
+}
+
+.grey-light-bg {
+  background-color: #ccc;
+}
+
+.white-bg {
+  background-color: #fff;
+}
+
+.white-dark-bg {
+  background-color: #e6e6e6;
+}
+
+.supplementary-dark-bg {
+  background-color: #b2beca;
+}
+
+.supplementary-light-bg {
+  background-color: #f5f5f5;
+}

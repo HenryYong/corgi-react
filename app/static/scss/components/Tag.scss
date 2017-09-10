@@ -1,0 +1,44 @@
+/**
+ *  Tag样式
+ *  Created @ 2017-09-02 10:18:12
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+
+@import './../params';
+@import './../conf';
+
+/**
+ *  生成状态相关的属性
+ **/
+@mixin statusGenerator($theme) {
+    &.#{$theme} {
+        background-color: map-get($themeMap, $theme);
+        border: 1px solid map-get($themeMap, ($theme + "Active"));
+        color: $default;
+        &:hover {
+            background-color: map-get($themeMap, ($theme + "Active"));
+        }
+    }
+}
+
+.#{$name}-tag {
+    display: inline-block;
+    height: 24px;
+    line-height: 22px;
+    padding: 0 7px;
+    border-radius: 3px;
+    font-size: 12px;
+    @each $theme in $mainTheme {
+        @include statusGenerator($theme);
+    }
+    &__icon {
+        margin-left: 3px;
+        vertical-align: text-bottom;
+        font-size: 13px;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}

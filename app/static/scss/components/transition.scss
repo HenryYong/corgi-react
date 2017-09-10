@@ -1,0 +1,30 @@
+/**
+ *  内置动画样式
+ *  Created @ 2017-08-01 22:21:02
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+
+@import './../params';
+
+$fade: '.#{name}-fade';
+
+#{$fade}-enter-active,
+#{$fade}-leave-active {
+    transition: opacity linear .2s;
+}
+
+#{$fade}-enter,
+#{$fade}-leave-to {
+    opacity: 0;
+}
+
+@keyframes circling {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(1turn);
+    }
+}

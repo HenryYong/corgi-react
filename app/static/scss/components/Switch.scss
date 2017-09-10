@@ -1,0 +1,134 @@
+/**
+ *  Switch Style
+ *  Created @ 2017-09-08 19:03:39
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+
+@import './../params';
+@import './../conf';
+
+.#{$name}-switch {
+    position: relative;
+    display: inline-block;
+    &__el {
+        display: none;
+    }
+    &__trigger {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 26px;
+        border: 1px solid $success;
+        border-radius: 14px;
+        cursor: pointer;
+        background-color: $success;
+        transition: border-color .3s, background-color .3s;
+    }
+    &__slider {
+        display: inline-block;
+        position: absolute;
+        top: 1px;
+        width: 22px;
+        height: 22px;
+        border: 1px solid transparent;
+        border-radius: 50%;
+        background-color: $default;
+        transition: transform linear .2s, background-color .2s;
+        z-index: 1;
+    }
+    &__on {
+        .#{$name}-switch {
+            &__slider {
+                transform: translateX(35px);
+            }
+            &__label {
+                left: 0;
+            }
+        }
+    }
+    &__off {
+        .#{$name}-switch {
+            &__trigger {
+                background-color: $white-dark;
+                border-color: $white-dark;
+            }
+            &__slider {
+                transform: translateX(1px);
+            }
+            &__label {
+                right: 0;
+            }
+        }
+    }
+    &__label {
+        position: absolute;
+        top: 50%;
+        width: 36px;
+        transform: translateY(-50%);
+        font-size: 12px;
+        color: $default;
+        cursor: pointer;
+        text-align: center;
+    }
+    &__small {
+        .#{$name}-switch {
+            &__trigger {
+                width: 44px;
+                height: 24px;
+                border-radius: 14px;
+            }
+            &__slider {
+                width: 20px;
+                height: 20px;
+            }
+            &__label {
+                width: 22px;
+            }
+        }
+        &.#{$name}-switch__on {
+            .#{$name}-switch__slider {
+                transform: translateX(21px);
+            }
+        }
+    }
+    &__square {
+        .#{$name}-switch {
+            &__trigger,
+            &__slider {
+                border-radius: 3px;
+            }
+        }
+    }
+    &__hollow {
+        .#{$name}-switch {
+            &__trigger {
+                background-color: transparent;
+            }
+            &__slider {
+                border-color: $defaultBorderColor;
+            }
+        }
+        &.#{$name}-switch {
+            &__on {
+                .#{$name}-switch {
+                    &__slider {
+                        background-color: $success;
+                        border-color: $success;
+                    }
+                    &__label {
+                        color: $success;
+                    }
+                }
+            }
+            &__off {
+                .#{$name}-switch {
+                    &__label {
+                        color: $defaultBorderColor;
+                    }
+                }
+            }
+        }
+    }
+}

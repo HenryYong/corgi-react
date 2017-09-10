@@ -1,0 +1,33 @@
+/**
+ *  Col组件样式
+ *  Created @ 2017-07-30 17:49:43
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+
+@import './../conf';
+
+.#{$name}-col {
+    float: left;
+}
+
+@for $i from 1 through 12 {
+    .#{$name}-col-#{$i} {
+        width: 100% * ($i / 12);
+    }
+
+    .#{$name}-offset-#{$i} {
+        margin-left: 100% * ($i / 12);
+    }
+
+    .#{$name}-push-#{$i} {
+        position: relative;
+        left: 100% * ($i / 12);
+    }
+
+    .#{$name}-pull-#{$i} {
+        position: relative;
+        right: 100% * ($i / 12);
+    }
+}

@@ -1,0 +1,67 @@
+/**
+ *  reset
+ *  Created @ 2017-07-20 00:09:07
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+
+@import './params';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 14px;
+    font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,SimSun,sans-serif;
+    line-height: 1;
+    vertical-align: baseline;
+    -webkit-font-smoothing: antialiased;
+}
+
+html,
+body {
+    -webkit-font-smoothing: antialiased;
+}
+
+@for $i from 1 through 6 {
+    h#{$i},
+    .h#{$i}{
+        margin: 0;
+        font: {
+            weight: 300;
+            size: 16px + (5 - $i) * 4
+        }
+    }
+}
+
+p{
+    margin: 0;
+}
+
+input,
+select,
+textarea{
+    outline: none;
+    box-shadow: none;
+    border: 1px solid $defaultBorderColor;
+    vertical-align: middle;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+article,aside,canvas,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section,summary {
+    display:block;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}

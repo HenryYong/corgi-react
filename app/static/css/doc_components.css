@@ -1,0 +1,163 @@
+@charset "UTF-8";
+/**
+ *  文档公用样式
+ *  Created @ 2017-07-31 00:08:09
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  params
+ *  Created @ 2017-07-20 00:37:42
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  颜色变量 start
+ */
+/**
+ *  颜色变量 end
+ */
+/**
+ *  层级关系
+ */
+/**
+ *  组件样式配置文件
+ *  Created @ 2017-07-30 17:51:17
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  params
+ *  Created @ 2017-07-20 00:37:42
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  颜色变量 start
+ */
+/**
+ *  颜色变量 end
+ */
+/**
+ *  层级关系
+ */
+.component-usage .usage-detail:before, .component-usage .usage-detail:after {
+  content: '';
+  display: table;
+  line-height: 0;
+}
+.component-usage .usage-detail:after {
+  clear: both;
+}
+
+/**
+ *  生成和颜色相关的属性
+ */
+.demo-code-row {
+  margin-bottom: 20px;
+}
+.demo-code-row:last-child {
+  margin-bottom: 0;
+}
+
+.doc-title .main-title {
+  margin-bottom: 10px;
+  font-weight: 400;
+}
+.doc-title .sub-title {
+  color: #b2beca;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.usage-title-wrapper .usage-title {
+  margin: 50px 0 10px;
+}
+.usage-title-wrapper .usage-desc {
+  margin-bottom: 20px;
+  color: #b2beca;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.component-usage .usage-content {
+  border: 1px solid #e4edf7;
+  border-radius: 3px;
+  -webkit-transition: linear .2s;
+  transition: linear .2s;
+}
+.component-usage .usage-content:hover {
+  -webkit-box-shadow: 0 0 6px 0 rgba(228, 237, 247, 0.7), 0 2px 3px 0 rgba(228, 237, 247, 0.6);
+          box-shadow: 0 0 6px 0 rgba(228, 237, 247, 0.7), 0 2px 3px 0 rgba(228, 237, 247, 0.6);
+}
+.component-usage .usage-demo {
+  padding: 15px;
+  border-bottom: 1px solid #e4edf7;
+}
+.component-usage .usage-detail {
+  border-bottom: 1px solid #e4edf7;
+  background-color: #f5f5f5;
+}
+.component-usage .usage-code {
+  float: left;
+  width: 50%;
+  padding: 15px;
+  border-right: 1px solid #e4edf7;
+}
+.component-usage .usage-explain {
+  float: right;
+  width: 50%;
+  padding: 15px;
+  font-size: 14px;
+  color: #b2beca;
+}
+.component-usage .usage-bar {
+  padding: 10px;
+  text-align: center;
+  -webkit-transition: linear .2s;
+  transition: linear .2s;
+}
+.component-usage .usage-bar:hover {
+  background-color: #f5f5f5;
+}
+.component-usage .usage-bar:hover,
+.component-usage .usage-bar:hover i {
+  color: #88c3ff;
+}
+.component-usage .usage-bar,
+.component-usage .usage-bar i {
+  color: #e4edf7;
+  cursor: pointer;
+}
+.component-usage .usage-bar i {
+  margin-right: 10px;
+}
+.component-usage .hljs {
+  background-color: #f5f5f5;
+  line-height: 1.5;
+}
+
+.demo-color-block {
+  padding: 20px;
+  border-radius: 3px;
+  color: #fff;
+}
+.demo-color-block.odd {
+  background-color: #57a3f1;
+}
+.demo-color-block.even {
+  background-color: #88c3ff;
+}
+.demo-color-block.dark-text {
+  color: #999;
+}
+.demo-color-title {
+  margin-bottom: 5px;
+}
+.demo-color-subtitle {
+  opacity: .7;
+}

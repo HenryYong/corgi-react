@@ -1,0 +1,83 @@
+/**
+ *  params
+ *  Created @ 2017-07-20 00:37:42
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+
+$name: 'corgi';
+/**
+ *  颜色变量 start
+ */
+$default: #fff;
+$primary: #57a3f1;
+$info: #88c3ff;
+$success: #5bd18b;
+$warning: #ffc349;
+$error: #ff7979;
+
+$defaultActive: #fafafa;
+$primaryActive: #4491e1;
+$infoActive: #7ab9fa;
+$successActive: #33c16f;
+$warningActive: #ffb726;
+$errorActive: #fd6154;
+
+$attention: #ffa65f;
+$important-dark: #4491e1;
+$important-light: #e4edf7;
+
+$black: #333;
+$black-light: #666;
+$grey: #999;
+$grey-light: #ccc;
+$white-dark: #e6e6e6;
+$white: #fff;
+$supplementary-dark: #b2beca;
+$supplementary-light: #f5f5f5;
+
+$defaultBorderColor: #e6e6e6;
+$hoverBorderColor: #b2beca;
+$disabledBGC: #f5f5f5;
+$disabledColor: #999;
+$defaultTableBGC: #e6e6e6;
+
+ /**
+  *  颜色变量 end
+  */
+
+$mainTheme: ('primary', 'info', 'success', 'warning', 'error');
+
+$themeMap: (
+    'primary': $primary,
+    'primaryActive': $primaryActive,
+    'info': $info,
+    'infoActive': $infoActive,
+    'success': $success,
+    'successActive': $successActive,
+    'warning': $warning,
+    'warningActive': $warningActive,
+    'error': $error,
+    'errorActive': $errorActive,
+    'important-dark': $important-dark,
+    'important-light': $important-light,
+    'attention': $attention,
+    'black': $black,
+    'black-light': $black-light,
+    'grey': $grey,
+    'grey-light': $grey-light,
+    'white-dark': $white-dark,
+    'white': $white,
+    'supplementary-dark': $supplementary-dark,
+    'supplementary-light': $supplementary-light
+);
+
+/**
+ *  层级关系
+ */
+$component: 1;    // 组件内部需要的层级
+$tips: 10;        // 提示类组件的层级
+$message: 100;    // 消息类组件的层级
+$mask: 1000;      // 遮罩的层级
+$alert: 10000;    // 弹窗类组件的层级

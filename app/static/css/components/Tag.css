@@ -1,0 +1,109 @@
+@charset "UTF-8";
+/**
+ *  Tag样式
+ *  Created @ 2017-09-02 10:18:12
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  params
+ *  Created @ 2017-07-20 00:37:42
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  颜色变量 start
+ */
+/**
+ *  颜色变量 end
+ */
+/**
+ *  层级关系
+ */
+/**
+ *  组件样式配置文件
+ *  Created @ 2017-07-30 17:51:17
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  params
+ *  Created @ 2017-07-20 00:37:42
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  颜色变量 start
+ */
+/**
+ *  颜色变量 end
+ */
+/**
+ *  层级关系
+ */
+/**
+ *  生成和颜色相关的属性
+ */
+/**
+ *  生成状态相关的属性
+ **/
+.corgi-tag {
+  display: inline-block;
+  height: 24px;
+  line-height: 22px;
+  padding: 0 7px;
+  border-radius: 3px;
+  font-size: 12px;
+}
+.corgi-tag.primary {
+  background-color: #57a3f1;
+  border: 1px solid #4491e1;
+  color: #fff;
+}
+.corgi-tag.primary:hover {
+  background-color: #4491e1;
+}
+.corgi-tag.info {
+  background-color: #88c3ff;
+  border: 1px solid #7ab9fa;
+  color: #fff;
+}
+.corgi-tag.info:hover {
+  background-color: #7ab9fa;
+}
+.corgi-tag.success {
+  background-color: #5bd18b;
+  border: 1px solid #33c16f;
+  color: #fff;
+}
+.corgi-tag.success:hover {
+  background-color: #33c16f;
+}
+.corgi-tag.warning {
+  background-color: #ffc349;
+  border: 1px solid #ffb726;
+  color: #fff;
+}
+.corgi-tag.warning:hover {
+  background-color: #ffb726;
+}
+.corgi-tag.error {
+  background-color: #ff7979;
+  border: 1px solid #fd6154;
+  color: #fff;
+}
+.corgi-tag.error:hover {
+  background-color: #fd6154;
+}
+.corgi-tag__icon {
+  margin-left: 3px;
+  vertical-align: text-bottom;
+  font-size: 13px;
+}
+.corgi-tag__icon:hover {
+  cursor: pointer;
+}

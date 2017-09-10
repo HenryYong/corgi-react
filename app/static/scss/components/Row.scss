@@ -1,0 +1,58 @@
+/**
+ *  Row组件样式
+ *  Created @ 2017-07-30 00:27:45
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+
+@import './../conf';
+
+.#{$name}-row {
+    position: relative;
+    box-sizing: border-box;
+    @extend %clearfix;
+    &__flex {
+        display: flex;
+        &.#{$name}-row{
+            &:before,
+            &:after {
+                display: none;
+            }
+        }
+        &.justify {
+            &-start {
+                justify-content: flex-start;
+            }
+            &-center {
+                justify-content: center;
+            }
+            &-end {
+                justify-content: flex-end;
+            }
+            &-space-around {
+                justify-content: space-around;
+            }
+            &-space-between {
+                justify-content: space-between;
+            }
+        }
+        &.align {
+            &-baseline {
+                align-items: baseline;
+            }
+            &-top {
+                align-items: flex-start;
+            }
+            &-center {
+                align-items: center;
+            }
+            &-bottom {
+                align-items: flex-end;
+            }
+            &-stretch {
+                align-items: stretch;
+            }
+        }
+    }
+}

@@ -1,0 +1,253 @@
+@charset "UTF-8";
+/**
+ *  Col组件样式
+ *  Created @ 2017-07-30 17:49:43
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  组件样式配置文件
+ *  Created @ 2017-07-30 17:51:17
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  params
+ *  Created @ 2017-07-20 00:37:42
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  颜色变量 start
+ */
+/**
+ *  颜色变量 end
+ */
+/**
+ *  层级关系
+ */
+/**
+ *  生成和颜色相关的属性
+ */
+.corgi-col {
+  float: left;
+}
+
+.corgi-col-1 {
+  width: 8.33333%;
+}
+
+.corgi-offset-1 {
+  margin-left: 8.33333%;
+}
+
+.corgi-push-1 {
+  position: relative;
+  left: 8.33333%;
+}
+
+.corgi-pull-1 {
+  position: relative;
+  right: 8.33333%;
+}
+
+.corgi-col-2 {
+  width: 16.66667%;
+}
+
+.corgi-offset-2 {
+  margin-left: 16.66667%;
+}
+
+.corgi-push-2 {
+  position: relative;
+  left: 16.66667%;
+}
+
+.corgi-pull-2 {
+  position: relative;
+  right: 16.66667%;
+}
+
+.corgi-col-3 {
+  width: 25%;
+}
+
+.corgi-offset-3 {
+  margin-left: 25%;
+}
+
+.corgi-push-3 {
+  position: relative;
+  left: 25%;
+}
+
+.corgi-pull-3 {
+  position: relative;
+  right: 25%;
+}
+
+.corgi-col-4 {
+  width: 33.33333%;
+}
+
+.corgi-offset-4 {
+  margin-left: 33.33333%;
+}
+
+.corgi-push-4 {
+  position: relative;
+  left: 33.33333%;
+}
+
+.corgi-pull-4 {
+  position: relative;
+  right: 33.33333%;
+}
+
+.corgi-col-5 {
+  width: 41.66667%;
+}
+
+.corgi-offset-5 {
+  margin-left: 41.66667%;
+}
+
+.corgi-push-5 {
+  position: relative;
+  left: 41.66667%;
+}
+
+.corgi-pull-5 {
+  position: relative;
+  right: 41.66667%;
+}
+
+.corgi-col-6 {
+  width: 50%;
+}
+
+.corgi-offset-6 {
+  margin-left: 50%;
+}
+
+.corgi-push-6 {
+  position: relative;
+  left: 50%;
+}
+
+.corgi-pull-6 {
+  position: relative;
+  right: 50%;
+}
+
+.corgi-col-7 {
+  width: 58.33333%;
+}
+
+.corgi-offset-7 {
+  margin-left: 58.33333%;
+}
+
+.corgi-push-7 {
+  position: relative;
+  left: 58.33333%;
+}
+
+.corgi-pull-7 {
+  position: relative;
+  right: 58.33333%;
+}
+
+.corgi-col-8 {
+  width: 66.66667%;
+}
+
+.corgi-offset-8 {
+  margin-left: 66.66667%;
+}
+
+.corgi-push-8 {
+  position: relative;
+  left: 66.66667%;
+}
+
+.corgi-pull-8 {
+  position: relative;
+  right: 66.66667%;
+}
+
+.corgi-col-9 {
+  width: 75%;
+}
+
+.corgi-offset-9 {
+  margin-left: 75%;
+}
+
+.corgi-push-9 {
+  position: relative;
+  left: 75%;
+}
+
+.corgi-pull-9 {
+  position: relative;
+  right: 75%;
+}
+
+.corgi-col-10 {
+  width: 83.33333%;
+}
+
+.corgi-offset-10 {
+  margin-left: 83.33333%;
+}
+
+.corgi-push-10 {
+  position: relative;
+  left: 83.33333%;
+}
+
+.corgi-pull-10 {
+  position: relative;
+  right: 83.33333%;
+}
+
+.corgi-col-11 {
+  width: 91.66667%;
+}
+
+.corgi-offset-11 {
+  margin-left: 91.66667%;
+}
+
+.corgi-push-11 {
+  position: relative;
+  left: 91.66667%;
+}
+
+.corgi-pull-11 {
+  position: relative;
+  right: 91.66667%;
+}
+
+.corgi-col-12 {
+  width: 100%;
+}
+
+.corgi-offset-12 {
+  margin-left: 100%;
+}
+
+.corgi-push-12 {
+  position: relative;
+  left: 100%;
+}
+
+.corgi-pull-12 {
+  position: relative;
+  right: 100%;
+}

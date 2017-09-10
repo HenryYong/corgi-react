@@ -1,0 +1,147 @@
+@charset "UTF-8";
+/**
+ *  Table样式
+ *  Created @ 2017-08-28 20:20:48
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  params
+ *  Created @ 2017-07-20 00:37:42
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  颜色变量 start
+ */
+/**
+ *  颜色变量 end
+ */
+/**
+ *  层级关系
+ */
+/**
+ *  组件样式配置文件
+ *  Created @ 2017-07-30 17:51:17
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  params
+ *  Created @ 2017-07-20 00:37:42
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  颜色变量 start
+ */
+/**
+ *  颜色变量 end
+ */
+/**
+ *  层级关系
+ */
+/**
+ *  生成和颜色相关的属性
+ */
+/**
+ *  生成状态相关的属性
+ **/
+.corgi-table {
+  width: 100%;
+  border: 1px solid #e6e6e6;
+}
+.corgi-table__bordered > .corgi-table__header > tr > th {
+  border-right: 1px solid #e6e6e6;
+}
+.corgi-table__bordered > .corgi-table__header > tr > th:last-child {
+  border-right: none;
+}
+.corgi-table__bordered > .corgi-table__body > tr > td {
+  border-right: 1px solid #e6e6e6;
+}
+.corgi-table__bordered > .corgi-table__body > tr:last-child {
+  border-right: none;
+}
+.corgi-table__stripe > .corgi-table__body > tr:nth-of-type(even) > td {
+  background-color: #f5f5f5;
+}
+.corgi-table__hover .corgi-table__body > tr:hover {
+  background-color: #e6e6e6;
+}
+.corgi-table .corgi-table__header > tr {
+  background-color: #e6e6e6;
+}
+.corgi-table .corgi-table__header > tr > th {
+  padding: 10px 15px;
+  border-bottom: 1px solid #e6e6e6;
+  font-size: 14px;
+  text-align: left;
+}
+.corgi-table .corgi-table__body.corgi-table__empty > tr:hover {
+  background-color: transparent;
+}
+.corgi-table .corgi-table__body.corgi-table__empty > tr > td {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+.corgi-table .corgi-table__body > tr.corgi-table__expand-row, .corgi-table .corgi-table__body > tr.corgi-table__expand-row:hover {
+  background-color: #f5f5f5;
+}
+.corgi-table .corgi-table__body > tr.corgi-table__expand-row.hidden {
+  display: none;
+}
+.corgi-table .corgi-table__body > tr > td {
+  padding: 10px 15px;
+  border-bottom: 1px solid #e6e6e6;
+}
+.corgi-table .corgi-table__body > tr > td.corgi-table__expand-icon {
+  width: 30px;
+  padding-left: 5px;
+  padding-right: 5px;
+  text-align: center;
+  cursor: pointer;
+}
+.corgi-table .corgi-table__body > tr:last-child {
+  border-bottom: none;
+}
+.corgi-table .corgi-table__body > tr.primary {
+  background-color: #57a3f1;
+  color: #fff;
+}
+.corgi-table .corgi-table__body > tr.primary:hover {
+  background-color: #4491e1;
+}
+.corgi-table .corgi-table__body > tr.info {
+  background-color: #88c3ff;
+  color: #fff;
+}
+.corgi-table .corgi-table__body > tr.info:hover {
+  background-color: #7ab9fa;
+}
+.corgi-table .corgi-table__body > tr.success {
+  background-color: #5bd18b;
+  color: #fff;
+}
+.corgi-table .corgi-table__body > tr.success:hover {
+  background-color: #33c16f;
+}
+.corgi-table .corgi-table__body > tr.warning {
+  background-color: #ffc349;
+  color: #fff;
+}
+.corgi-table .corgi-table__body > tr.warning:hover {
+  background-color: #ffb726;
+}
+.corgi-table .corgi-table__body > tr.error {
+  background-color: #ff7979;
+  color: #fff;
+}
+.corgi-table .corgi-table__body > tr.error:hover {
+  background-color: #fd6154;
+}

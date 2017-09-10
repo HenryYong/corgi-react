@@ -1,0 +1,100 @@
+/**
+ *  Checkbox样式
+ *  Created @ 2017-08-11 20:27:45
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+
+@import './../params';
+@import './../conf';
+
+.#{$name}-checkbox {
+    position: relative;
+    cursor: pointer;
+    &:hover {
+        .#{$name}-checkbox {
+            &__selector {
+                &.checked {
+                    background-color: $primaryActive;
+                    border-color: $primaryActive;
+                }
+                border-color: $primary;
+            }
+        }
+        .disabled {
+            &,
+            & + .#{$name}-checkbox__label {
+                cursor: not-allowed;
+            }
+            &.#{$name}-checkbox {
+                &__selector {
+                    &.checked {
+                        background-color: $supplementary-dark;
+                        border-color: $supplementary-dark;
+                    }
+                    border-color: $defaultBorderColor;
+                }
+            }
+        }
+    }
+    &__selector {
+        position: relative;
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        border: 1px solid $defaultBorderColor;
+        border-radius: 3px;
+        box-shadow: inset 0 0 2px .5px rgba(0, 0, 0, .05);
+        vertical-align: text-top;
+        @include setTransition();
+        &:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            border: 2px solid #fff;
+            height: 6px;
+            width: 3px;
+            border-top: 0;
+            border-left: 0;
+            transform: translate(-50%, -60%) rotate(45deg) scaleY(0);
+            transform-origin: center;
+        }
+        &.checked {
+            background-color: $primary;
+            border-color: $primary;
+            &:after {
+                transform: translate(-50%, -60%) rotate(45deg) scaleY(1);
+            }
+        }
+        &.indeterminate {
+            background-color: $primary;
+            border-color: $primary;
+            &:after {
+                top: calc(50% - 1px);
+                border-bottom: 0;
+                transform: translate(-50%, -50%) rotate(90deg) scaleY(1);
+            }
+        }
+        &.disabled {
+            border-color: $defaultBorderColor;
+            &.checked {
+                background-color: $supplementary-dark;
+                border-color: $supplementary-dark;
+            }
+            & + .#{$name}-checkbox__label {
+                color: $grey-light;
+            }
+        }
+    }
+    &__label {
+        padding-left: 5px;
+    }
+    .#{$name}-origin-el {
+        display: none;
+    }
+    & + .#{$name}-checkbox {
+        margin-left: 10px;
+    }
+}

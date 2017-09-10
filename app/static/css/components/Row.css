@@ -1,0 +1,105 @@
+@charset "UTF-8";
+/**
+ *  Row组件样式
+ *  Created @ 2017-07-30 00:27:45
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  组件样式配置文件
+ *  Created @ 2017-07-30 17:51:17
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  params
+ *  Created @ 2017-07-20 00:37:42
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  颜色变量 start
+ */
+/**
+ *  颜色变量 end
+ */
+/**
+ *  层级关系
+ */
+.corgi-row:before, .corgi-row:after {
+  content: '';
+  display: table;
+  line-height: 0;
+}
+.corgi-row:after {
+  clear: both;
+}
+
+/**
+ *  生成和颜色相关的属性
+ */
+.corgi-row {
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.corgi-row__flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.corgi-row__flex.corgi-row:before, .corgi-row__flex.corgi-row:after {
+  display: none;
+}
+.corgi-row__flex.justify-start {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+.corgi-row__flex.justify-center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.corgi-row__flex.justify-end {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+.corgi-row__flex.justify-space-around {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+.corgi-row__flex.justify-space-between {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.corgi-row__flex.align-baseline {
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+.corgi-row__flex.align-top {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+.corgi-row__flex.align-center {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.corgi-row__flex.align-bottom {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+.corgi-row__flex.align-stretch {
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
