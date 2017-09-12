@@ -1,5 +1,5 @@
 /**
- *  Select组件
+ *  Select Component
  *  Created @ 2017-08-30 13:22:32
  *  Copyright (c) 2017 by Henry Yang.
  *  All Rights Reserved.
@@ -293,7 +293,6 @@ class Select extends Component {
     render () {
         let libName = this.getLibName()
         let {
-            extCls,
             list,
             enableSearch,
             enableClear,
@@ -310,8 +309,7 @@ class Select extends Component {
                     className={ formatClsNames(
                         `${ libName }-select`,
                         `${ disabled ? `${ libName }-select__disabled` : '' }`,
-                        `${ multiple ? `${ libName }-select__multiple` : '' }`,
-                        extCls
+                        `${ multiple ? `${ libName }-select__multiple` : '' }`
                     ) }
                     style={{ height: this.state.calcEditorSize }}>
                     <div className={ formatClsNames(
@@ -361,7 +359,6 @@ class Select extends Component {
 }
 
 Select.propTypes = {
-    extCls: PropTypes.string,
     list: PropTypes.array,
     displayKey: PropTypes.string,
     disabled: PropTypes.bool,

@@ -30,10 +30,10 @@ export default {
                         {
                             id: "colors",
                             name: "颜色"
-                        },
-                        {
-                            id: "transition",
-                            name: "过渡动画"
+                        // },
+                        // {
+                        //     id: "transition",
+                        //     name: "过渡动画"
                         }
                     ]
                 },
@@ -58,7 +58,7 @@ export default {
                         },
                         {
                             id: "select",
-                            name: "数据选择"
+                            name: "下拉列表"
                         },
                         {
                             id: "form",
@@ -71,10 +71,10 @@ export default {
                         {
                             id: "switch",
                             name: "开关"
-                        },
-                        {
-                            id: "rate",
-                            name: "评分"
+                        // },
+                        // {
+                        //     id: "rate",
+                        //     name: "评分"
                         }
                     ]
                 }

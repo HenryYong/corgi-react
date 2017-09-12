@@ -1,5 +1,5 @@
 /**
- *  Table组件
+ *  Table Component
  *  Created @ 2017-08-28 20:26:19
  *  Copyright (c) 2017 by Henry Yang.
  *  All Rights Reserved.

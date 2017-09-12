@@ -1,5 +1,5 @@
 /**
- *  Select文档
+ *  Select Docs
  *  Created @ 2017-08-30 13:23:55
  *  Copyright (c) 2017 by Henry Yang.
  *  All Rights Reserved.
@@ -9,6 +9,7 @@
 import React from 'react'
 import DocTitle from 'doc_components/DocTitle'
 import Usage from 'doc_components/Usage'
+import Config from 'doc_components/ConfigTable'
 import { Select } from 'packages'
 
 class PageSelect extends React.Component {
@@ -73,7 +74,13 @@ class PageSelect extends React.Component {
                         text: '澳门'
                     }
                 ]
-            }
+            },
+            attrs: [
+                {}
+            ],
+            events: [
+                {}
+            ]
         }
     }
 
@@ -84,15 +91,14 @@ class PageSelect extends React.Component {
     render () {
         return <section className='select-wrapper'>
                     <DocTitle
-                        title='数据选择'
-                        subtitle='选项较多时，使用本组件模拟原生下拉选择框'
+                        title='下拉列表'
+                        subtitle='选项较多时，使用本组件模拟原生下拉列表'
                     />
                     <Usage
                         title='基础用法'
                         description='默认配置的基础单选'
                         demo={
                             <Select
-                                extCls='demo-select'
                                 list={this.state.basicConfig.list}
                                 placeholder='请选择城市'
                             />
@@ -103,7 +109,6 @@ class PageSelect extends React.Component {
                         title='有禁用选项'
                         demo={
                             <Select
-                                extCls='demo-select'
                                 list={this.state.disabledOptionConfig.list}
                                 placeholder='请选择城市'
                             />
@@ -114,7 +119,6 @@ class PageSelect extends React.Component {
                         title='禁用组件'
                         demo={
                             <Select
-                                extCls='demo-select'
                                 list={this.state.disabledOptionConfig.list}
                                 placeholder='请选择城市'
                                 disabled={true}
@@ -127,7 +131,6 @@ class PageSelect extends React.Component {
                         description='鼠标移入组件时出现清空按钮，将组件重置成初始化状态'
                         demo={
                             <Select
-                                extCls='demo-select'
                                 list={this.state.disabledOptionConfig.list}
                                 placeholder='请选择城市'
                                 enableClear={true}
@@ -140,7 +143,6 @@ class PageSelect extends React.Component {
                         description='可选择多个选项，选中内容使用Tag组件'
                         demo={
                             <Select
-                                extCls='demo-select'
                                 list={this.state.disabledOptionConfig.list}
                                 placeholder='请选择城市'
                                 multiple={true}
@@ -153,12 +155,21 @@ class PageSelect extends React.Component {
                         description='在组件中筛选内容'
                         demo={
                             <Select
-                                extCls='demo-select'
                                 list={this.state.basicConfig.list}
                                 placeholder='请选择城市'
                                 enableSearch={true}
                             />
                         }
+                    />
+
+                    <Config type='attr'
+                        title='Select'
+                        data={ this.state.attrs }
+                    />
+
+                    <Config type='event'
+                        title='Select'
+                        data={ this.state.events }
                     />
                 </section>
     }

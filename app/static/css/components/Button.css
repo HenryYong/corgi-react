@@ -249,3 +249,6 @@
 .corgi-btn-group > .corgi-btn__status:not(:first-child) {
   border-left-color: rgba(255, 255, 255, 0.7) !important;
 }
+.corgi-btn + .corgi-btn {
+  margin-left: 10px;
+}

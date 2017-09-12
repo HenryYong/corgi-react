@@ -1,5 +1,5 @@
 /**
- *  Form行组件
+ *  Form.Row Component
  *  Created @ 2017-09-07 00:18:36
  *  Copyright (c) 2017 by Henry Yang.
  *  All Rights Reserved.
@@ -47,7 +47,7 @@ class FormRow extends Component {
 }
 
 FormRow.propTypes = {
-    label: function (props, propName, componentName) {       // 允许传入字符串或使用createElement生成的节点
+    label: function (props, propName, componentName) { // allow string or jsx
         let cur = props[propName]
         let isString = typeof cur === 'string'
         let isObject = cur instanceof Object

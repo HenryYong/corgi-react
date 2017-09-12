@@ -144,6 +144,7 @@ class PageSwitch extends React.Component {
                         code="render () {
                             return <Switch size='small'/>
                         }"
+                        explain='配置size参数，可生成不同大小的开关实例'
                     />
 
                     <Usage
@@ -156,6 +157,7 @@ class PageSwitch extends React.Component {
                         code="render () {
                             return <Switch shape='square'/>
                         }"
+                        explain='配置shape参数，可生成不同形状的开关实例'
                     />
 
                     <Usage
@@ -168,6 +170,7 @@ class PageSwitch extends React.Component {
                         code="render () {
                             return <Switch hollow={true} status={true}/>
                         }"
+                        explain='配置hollow参数，可选择是否镂空的开关实例'
                     />
 
                     <Usage
@@ -180,6 +183,7 @@ class PageSwitch extends React.Component {
                         code="render () {
                             return <Switch onColor='#57a3f1' offColor='#ff0000'/>
                         }"
+                        explain='配置onColor和offColor参数，设置不同状态的背景色'
                     />
 
                     <Usage
@@ -192,6 +196,7 @@ class PageSwitch extends React.Component {
                         code="render () {
                             return <Switch onText='开' offText='关' status={true}/>
                         }"
+                        explain='配置onText和offTex参数，设置不同状态的文字'
                     />
 
                     <Config type='attr'

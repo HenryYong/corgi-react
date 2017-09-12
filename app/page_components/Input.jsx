@@ -139,22 +139,15 @@ class PageInput extends React.Component {
                 },
                 {
                     props: 'disabled',
-                    desc: 'input框的原生属性',
+                    desc: '是否禁用组件',
                     type: 'Boolean',
-                    available: '——',
-                    defaultValue: '——'
-                },
-                {
-                    props: 'defaultValue',
-                    desc: '默认值',
-                    type: 'Any',
                     available: '——',
                     defaultValue: '——'
                 },
                 {
                     props: 'value',
                     desc: '当前显示的值',
-                    type: 'Any',
+                    type: 'String/Number',
                     available: '——',
                     defaultValue: '——'
                 },
@@ -177,7 +170,7 @@ class PageInput extends React.Component {
                 {
                     name: 'onChange',
                     desc: '改变值时的回调函数',
-                    cbvar: '当前输入的值'
+                    cbvar: '1、当前输入的值。2、输入后输入框/文本框中的值'
                 }
             ]
         }
@@ -194,9 +187,123 @@ class PageInput extends React.Component {
                         description='普通的输入框'
                         demo={
                             <div className="demo-code-row">
-                                <Input size='large'/>
+                                <Input/>
                             </div>
                         }
+                        code="render () {
+                                    return <Input/>
+                                }"
+                        explain='不用任何参数即可生成一个简单的输入框实例'
+                    />
+
+                    <Usage
+                        title='禁用状态'
+                        demo={
+                            <div className="demo-code-row">
+                                <Input disabled={ true }/>
+                            </div>
+                        }
+                        code="render () {
+                                    return <Input disabled={ true }/>
+                                }"
+                        explain='配置disabled参数来禁用组件'
+                    />
+
+                    <Usage
+                        title='内置icon的输入框'
+                        demo={
+                            <div className="demo-code-row">
+                                <Input icon='check' iconFloat='left'/>
+                                <Input icon='delete' iconFloat='right'/>
+                            </div>
+                        }
+                        code="render () {
+                                    return <div>
+                                                <Input icon='check' iconFloat='left'/>
+                                                <Input icon='delete' iconFloat='right'/>
+                                            </div>
+                                }"
+                        explain='配置icon参数可添加图标，配置iconFloat参数可控制图标出现的位置'
+                    />
+
+                    <Usage
+                        title='有附加内容的输入框'
+                        description='带有前置或后置内容，一般是标签或按钮'
+                        demo={
+                            <div className="demo-code-row">
+                                <Input preaddon='$'/>
+                                <Input postaddon='个'/>
+                                <Input preaddon='http://' postaddon='.com'/>
+                            </div>
+                        }
+                        code="render () {
+                                    return <div>
+                                                <Input preaddon='$'/>
+                                                <Input postaddon='个'/>
+                                                <Input preaddon='http://' postaddon='.com'/>
+                                            </div>
+                                }"
+                        explain='配置preaddon或postaddon即可，同时也支持传入JSX'
+                    />
+
+                    <Usage
+                        title='不同尺寸'
+                        demo={
+                            <div className="demo-code-row size">
+                                <Input size='large'/>
+                                <Input/>
+                                <Input size='small'/>
+                                <Input size='mini'/>
+                            </div>
+                        }
+                        code="render () {
+                                    return <div>
+                                                <Input size='large'/>
+                                                <Input/>
+                                                <Input size='small'/>
+                                                <Input size='mini'/>
+                                            </div>
+                                }"
+                        explain='配置size即可获得不同大小的输入框'
+                    />
+
+                    <Usage
+                        title='多行文本'
+                        demo={
+                            <div className="demo-code-row basic-textarea">
+                                <Input mode='textarea'/>
+                            </div>
+                        }
+                        code="render () {
+                                    return <Input mode='textarea'/>
+                                }"
+                        explain='配置mode为textarea'
+                    />
+
+                    <Usage
+                        title='自定义初始行数'
+                        demo={
+                            <div className="demo-code-row basic-textarea">
+                                <Input mode='textarea' rows={1}/>
+                            </div>
+                        }
+                        code="render () {
+                                    return <Input mode='textarea' rows={1}/>
+                                }"
+                        explain='配置rows参数即可'
+                    />
+
+                    <Usage
+                        title='自适应高度的文本框'
+                        demo={
+                            <div className="demo-code-row basic-textarea">
+                                <Input mode='textarea' autoSize={true}/>
+                            </div>
+                        }
+                        code="render () {
+                                    return <Input mode='textarea' autoSize={true}/>
+                                }"
+                        explain='配置autoSize为true，可以使文本框根据输入行数自适应高度'
                     />
 
                     <Config type='attr'

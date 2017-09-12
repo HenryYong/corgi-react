@@ -10,13 +10,17 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Component } from 'libs'
 
+let isOnComposition = false
+let isChrome = !!window.chrome && !!window.chrome.webstore  // detect browser
+
 class Input extends Component {
     constructor (props) {
         super(props)
 
         this.state = {
             textareaStyle: null,
-            $lineHeight: 0
+            $lineHeight: 0,
+            $value: this.props.value
         }
     }
 
@@ -25,7 +29,7 @@ class Input extends Component {
     }
 
     calcTextareaStyle () {
-        let { setSize } = this.props
+        let { autoSize } = this.props
         let target = this.$textarea
 
         if (!target) return
@@ -39,7 +43,7 @@ class Input extends Component {
         let $calcHeight
 
         if ($scrollHeight > $innerHeight) {
-            if (setSize === true) {
+            if (autoSize === true) {
                 $calcHeight = $scrollHeight
             }
         }
@@ -55,8 +59,31 @@ class Input extends Component {
         let {
             onChange
         } = this.props
+        let newValue = e.target.value
+        let len = newValue.length
+
+        if (!e.target instanceof HTMLInputElement || isOnComposition) return
+
         this.calcTextareaStyle()
-        onChange && onChange(this.$input.value)
+        this.setState({
+            $value: newValue
+        }, () => {
+            onChange && onChange(newValue)
+        })
+    }
+
+    // filter all unnecessary onChange callball when using IME
+    compositionHandler (e) {
+        let type = e.type
+
+        if (type === 'compositionend') {
+            isOnComposition = false
+            if (e.target instanceof HTMLInputElement && !isOnComposition && isChrome) {
+                this.changeHandler(e)
+            }
+        } else {
+            isOnComposition = true
+        }
     }
 
     focusHandler (e) {
@@ -89,11 +116,14 @@ class Input extends Component {
             iconFloat,
             rows,
             resize,
-            setSize,
+            autoSize,
             preaddon,
             postaddon,
             ...moreProps
         } = this.props
+        let {
+            $value
+        } = this.state
 
         let hasAddon = preaddon || postaddon ? `${ libName }-input__wrapper ${ libName }-wrapper__${ postaddon ? 'postaddon' : '' }` : ''
 
@@ -115,11 +145,15 @@ class Input extends Component {
                             ref={ (el) => this.$textarea = el }
                             className={ formatClsNames(
                                 `${ textareaCls }__el`,
-                                `${ textareaCls }__${ resize }`
+                                `${ resize ? `${ textareaCls }__${ resize }` : '' }`
                             ) }
                             style={ this.state.textareaStyle }
                             rows={ rows }
                             { ...moreProps }
+                            value={ $value }
+                            onCompositionStart={ this.compositionHandler.bind(this) }
+                            onCompositionUpdate={ this.compositionHandler.bind(this) }
+                            onCompositionEnd={ this.compositionHandler.bind(this) }
                             onChange={ this.changeHandler.bind(this) }
                             onFocus={ this.focusHandler.bind(this) }
                             onBlur={ this.blurHandler.bind(this) }
@@ -156,6 +190,9 @@ class Input extends Component {
                             ) }
                             type={ type }
                             { ...moreProps }
+                            onCompositionStart={ this.compositionHandler.bind(this) }
+                            onCompositionUpdate={ this.compositionHandler.bind(this) }
+                            onCompositionEnd={ this.compositionHandler.bind(this) }
                             onChange={ this.changeHandler.bind(this) }
                             onFocus={ this.focusHandler.bind(this) }
                             onBlur={ this.blurHandler.bind(this) }
@@ -183,10 +220,10 @@ Input.propTypes = {
     // textarea
     rows: PropTypes.number,
     cols: PropTypes.number,
-    resize: PropTypes.string,
-    setSize: PropTypes.oneOfType([
-        PropTypes.bool,
-        PropTypes.object
+    resize: PropTypes.string,     // direction of resize textarea
+    autoSize: PropTypes.oneOfType([
+        PropTypes.bool,         // not perfect
+        PropTypes.object        // not supported now
     ]),
     // input
     preaddon: PropTypes.oneOfType([
@@ -211,8 +248,10 @@ Input.propTypes = {
         PropTypes.number
     ]),
     disabled: PropTypes.bool,
-    defaultValue: PropTypes.any,
-    value: PropTypes.any,
+    value: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number
+    ]),
     maxLength: PropTypes.number,
     minLength: PropTypes.number,
     // event callback
@@ -224,7 +263,8 @@ Input.defaultProps = {
     type: 'text',
     iconFloat: 'right',
     rows: 3,
-    cols: 8
+    cols: 8,
+    placeholder: '请输入内容'
 }
 
 export default Input

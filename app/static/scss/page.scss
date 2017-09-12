@@ -127,6 +127,22 @@ $height: 60px;
     }
 }
 
+.input-wrapper {
+    .size {
+        .#{$name}-input {
+            width: 200px;
+            margin-right: 20px;
+            vertical-align: top;
+        }
+    }
+    .basic-textarea {
+        width: 300px;
+    }
+    .#{$name}-input:not(:last-child) {
+        margin-bottom: 20px;
+    }
+}
+
 .demo-table-item {
     &.demo-tag {
         padding: 5px 7px;
@@ -139,7 +155,7 @@ $height: 60px;
 }
 
 .select-wrapper {
-    .demo-select {
+    .#{$name}-select {
         width: 200px;
     }
 }
