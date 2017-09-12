@@ -171,6 +171,16 @@ class PageInput extends React.Component {
                     name: 'onChange',
                     desc: '改变值时的回调函数',
                     cbvar: '1、当前输入的值。2、输入后输入框/文本框中的值'
+                },
+                {
+                    name: 'onFocus',
+                    desc: '组件获得焦点时的回调函数',
+                    cbvar: '当前事件'
+                },
+                {
+                    name: 'onBlur',
+                    desc: '组件失去焦点时的回调函数',
+                    cbvar: '当前事件'
                 }
             ]
         }
