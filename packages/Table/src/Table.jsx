@@ -212,7 +212,8 @@ Table.propTypes = {
 }
 
 Table.defaultProps = {
-    hoverEffect: true
+    hoverEffect: true,
+    emptyContent: '内容为空'
 }
 
 export default Table
