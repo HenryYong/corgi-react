@@ -45,12 +45,12 @@
 /**
  *  层级关系
  */
-.component-usage .usage-detail:before, .app-content:before, .component-usage .usage-detail:after, .app-content:after {
+.component-usage .usage-detail:before, .demo-clearfix:before, .app-content:before, .component-usage .usage-detail:after, .demo-clearfix:after, .app-content:after {
   content: '';
   display: table;
   line-height: 0;
 }
-.component-usage .usage-detail:after, .app-content:after {
+.component-usage .usage-detail:after, .demo-clearfix:after, .app-content:after {
   clear: both;
 }
 
@@ -103,12 +103,12 @@
 /**
  *  层级关系
  */
-.component-usage .usage-detail:before, .app-content:before, .component-usage .usage-detail:after, .app-content:after {
+.component-usage .usage-detail:before, .demo-clearfix:before, .app-content:before, .component-usage .usage-detail:after, .demo-clearfix:after, .app-content:after {
   content: '';
   display: table;
   line-height: 0;
 }
-.component-usage .usage-detail:after, .app-content:after {
+.component-usage .usage-detail:after, .demo-clearfix:after, .app-content:after {
   clear: both;
 }
 
@@ -218,6 +218,14 @@
 }
 .demo-color-subtitle {
   opacity: .7;
+}
+
+.demo-fl {
+  float: left;
+}
+
+.demo-fr {
+  float: right;
 }
 
 .app {

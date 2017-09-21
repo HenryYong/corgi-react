@@ -7,3 +7,7 @@ node_modules?
 doc
 npm-debug.log*
 packages/*/package.json
+corgi-theme
+config
+app/static
+dist

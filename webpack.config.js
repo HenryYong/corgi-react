@@ -1,5 +1,5 @@
 /**
- *  Corgi项目webpack配置文件
+ *  webpack config file for corgi-react
  *  Created @ 2017-07-29 12:57:47
  *  Copyright (c) 2017 by Henry Yang.
  *  All Rights Reserved.
@@ -38,6 +38,10 @@ var config = {
             {
                 test: /\.css$/,
                 loader: 'style-loader!css-loader'
+            },
+            {
+                test: /\.(eot|woff|ttf|svg)$/,
+                loader: 'file-loader'
             }
         ]
     },
