@@ -6,5 +6,8 @@
  */
 
 import Select from './src/Select'
+import SelectOption from './src/SelectOption'
+
+Select.Option = SelectOption
 
 export default Select

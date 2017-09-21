@@ -119,6 +119,8 @@ class Input extends Component {
             autoSize,
             preaddon,
             postaddon,
+            disabled,
+            autoFocus,
             ...moreProps
         } = this.props
         let {
@@ -164,6 +166,7 @@ class Input extends Component {
                     `${ libName }-input`,
                     hasAddon,
                     `${ size ? `${ libName }-input__${ size }` : '' }`,
+                    `${ disabled ? `${ libName }-input__disabled` : '' }`,
                     extCls
                 ) }>
                         {
@@ -189,6 +192,7 @@ class Input extends Component {
                                 `${ inputCls }__el`
                             ) }
                             type={ type }
+                            disabled={ disabled }
                             { ...moreProps }
                             onCompositionStart={ this.compositionHandler.bind(this) }
                             onCompositionUpdate={ this.compositionHandler.bind(this) }
@@ -254,6 +258,7 @@ Input.propTypes = {
     ]),
     maxLength: PropTypes.number,
     minLength: PropTypes.number,
+    autoFocus: PropTypes.bool,
     // event callback
     onChange: PropTypes.func
 }
