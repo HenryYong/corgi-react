@@ -35,9 +35,10 @@ class Input extends Component {
         if (!target) return
 
         let style = getComputedStyle(target)
-        let $height = this.convertToNum(style.height)
-        let $borderTopWidth =  this.convertToNum(style.borderTopWidth)
-        let $borderBottomWidth = this.convertToNum(style.borderBottomWidth)
+        let convertToNum = this.convertToNum
+        let $height = convertToNum(style.height)
+        let $borderTopWidth =  convertToNum(style.borderTopWidth)
+        let $borderBottomWidth = convertToNum(style.borderBottomWidth)
         let $innerHeight = $height - $borderTopWidth - $borderBottomWidth
         let $scrollHeight = target.scrollHeight
         let $calcHeight
@@ -64,10 +65,10 @@ class Input extends Component {
 
         if (!e.target instanceof HTMLInputElement || isOnComposition) return
 
-        this.calcTextareaStyle()
         this.setState({
             $value: newValue
         }, () => {
+            this.calcTextareaStyle()
             onChange && onChange(newValue)
         })
     }
@@ -102,6 +103,12 @@ class Input extends Component {
         handler && handler(e)
     }
 
+    isColor (str) {
+        let len = str.length
+
+        return (len === 4 || len === 7) && str.indexOf('#') === 0
+    }
+
     render () {
         let libName = this.getLibName()
         let formatClsNames = this.formatClsNames
@@ -121,6 +128,8 @@ class Input extends Component {
             postaddon,
             disabled,
             autoFocus,
+            status,
+            value,
             ...moreProps
         } = this.props
         let {
@@ -129,14 +138,7 @@ class Input extends Component {
 
         let hasAddon = preaddon || postaddon ? `${ libName }-input__wrapper ${ libName }-wrapper__${ postaddon ? 'postaddon' : '' }` : ''
 
-        if ('value' in this.props) {
-            // if there is no onChange and readOnly, use defaultValue instead of value
-            if (!('onChange' in this.props) && !('readOnly' in this.props)) {
-                moreProps.defaultValue = this.props.value
-
-                delete moreProps.value
-            }
-        }
+        let statusIsColor = this.isColor(status)
 
         if (mode === 'textarea') {
             return <div className={ formatClsNames(
@@ -189,10 +191,13 @@ class Input extends Component {
                         <input
                             ref={ (el) => this.$input = el }
                             className={ formatClsNames(
-                                `${ inputCls }__el`
+                                `${ inputCls }__el`,
+                                `${ statusIsColor ? '' : status }`
                             ) }
+                            style={{ borderColor: statusIsColor ? status : '' }}
                             type={ type }
                             disabled={ disabled }
+                            value={ $value }
                             { ...moreProps }
                             onCompositionStart={ this.compositionHandler.bind(this) }
                             onCompositionUpdate={ this.compositionHandler.bind(this) }
@@ -225,10 +230,7 @@ Input.propTypes = {
     rows: PropTypes.number,
     cols: PropTypes.number,
     resize: PropTypes.string,     // direction of resize textarea
-    autoSize: PropTypes.oneOfType([
-        PropTypes.bool,         // not perfect
-        PropTypes.object        // not supported now
-    ]),
+    autoSize: PropTypes.bool,
     // input
     preaddon: PropTypes.oneOfType([
         PropTypes.string,
@@ -240,6 +242,7 @@ Input.propTypes = {
         PropTypes.number,
         PropTypes.object,
     ]),
+    status: PropTypes.string,
     // origin attrs
     type: PropTypes.string,
     placeholder: PropTypes.string,
@@ -269,7 +272,8 @@ Input.defaultProps = {
     iconFloat: 'right',
     rows: 3,
     cols: 8,
-    placeholder: '请输入内容'
+    placeholder: '请输入内容',
+    status: ''
 }
 
 export default Input

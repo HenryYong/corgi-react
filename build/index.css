@@ -1573,6 +1573,21 @@ table {
 .corgi-input__el[disabled]:hover {
   border-color: #e6e6e6;
 }
+.corgi-input__el.primary {
+  border-color: #57a3f1;
+}
+.corgi-input__el.info {
+  border-color: #88c3ff;
+}
+.corgi-input__el.warning {
+  border-color: #ffc349;
+}
+.corgi-input__el.success {
+  border-color: #5bd18b;
+}
+.corgi-input__el.error {
+  border-color: #ff7979;
+}
 .corgi-input__icon {
   position: absolute;
   top: 0;

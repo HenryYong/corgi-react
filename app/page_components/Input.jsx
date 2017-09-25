@@ -197,7 +197,7 @@ class PageInput extends React.Component {
                         description='普通的输入框'
                         demo={
                             <div className="demo-code-row">
-                                <Input/>
+                                <Input />
                             </div>
                         }
                         code="render () {
@@ -308,6 +308,24 @@ class PageInput extends React.Component {
                         demo={
                             <div className="demo-code-row basic-textarea">
                                 <Input mode='textarea' autoSize={true}/>
+                            </div>
+                        }
+                        code="render () {
+                                    return <Input mode='textarea' autoSize={true}/>
+                                }"
+                        explain='配置autoSize为true，可以使文本框根据输入行数自适应高度'
+                    />
+
+                    <Usage
+                        title='有状态的输入框'
+                        demo={
+                            <div className="demo-code-row">
+                                <Input status='primary' />
+                                <Input status='info' />
+                                <Input status='warning' />
+                                <Input status='success' />
+                                <Input status='error' />
+                                <Input status='#123456' />
                             </div>
                         }
                         code="render () {
