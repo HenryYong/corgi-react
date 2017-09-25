@@ -21,7 +21,7 @@ class Checkbox extends Component {
 
     componentWillMount () {
         // length attribute in parent component will plus 1 if current instance is checked
-        if (this.state.isChecked) {
+        if (this.state.isChecked && this.context.cbGroup) {
             this.context.cbGroup.state.length += 1
         }
     }
@@ -67,6 +67,14 @@ class Checkbox extends Component {
         })
     }
 
+    handleOnClick () {
+        let {
+            onClick
+        } = this.props
+
+        onClick && onClick()
+    }
+
     render () {
         let libName = this.getLibName()
         let formatClsNames = this.formatClsNames
@@ -79,7 +87,9 @@ class Checkbox extends Component {
             children
         } = this.props
 
-        return <label className={ `${ libName }-checkbox` }>
+        return <label
+                    className={ `${ libName }-checkbox` }
+                    onClick={ this.handleOnClick.bind(this) }>
                     <span className={ formatClsNames(
                             `${ libName }-checkbox__selector`,
                             isChecked ? `checked` : '',
@@ -103,7 +113,8 @@ Checkbox.propTypes = {
     isChecked: PropTypes.bool,
     disabled: PropTypes.bool,
     indeterminate: PropTypes.bool,
-    onChecked: PropTypes.func
+    onChecked: PropTypes.func,
+    onClick: PropTypes.func
 }
 
 Checkbox.defaultProps = {

@@ -1,5 +1,5 @@
 /**
- *  Select组件
+ *  Select Component
  *  Created @ 2017-08-30 13:22:32
  *  Copyright (c) 2017 by Henry Yang.
  *  All Rights Reserved.
@@ -10,144 +10,137 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import ClickOutside from 'react-click-outside'
 import { Component } from 'libs'
-import { Input } from 'packages'
+import { Selector, Input } from 'packages'
+import SelectOption from './SelectOption'
 
 class Select extends Component {
     constructor (props) {
         super(props)
 
         this.state = {
-            showList: false,
-            showText: this.props.value,
-            showArr: [],
-            selectList: null,
-            calcMultipleSelected: null,
+            isShowList: false,
+            showText: this.props.multiple ? '' : this.props.value,
+            showArr: this.props.multiple ? this.props.value : [],
+            calcMultipleSelected: null,     // tpl of multiple selected
+            calcMultipleWrapper: null,
             calcEditorSize: '36px',
-            editorIcon: 'triangle'
+            curItem: null,       // in single select mode - obj; in multiple select mode - arr
+            localChildren: this.props.children,
+            calcList: null,
+            calcFilter: null
         }
     }
 
     componentWillMount () {
+        if (this.props.multiple) {
+            this.generateMultipleSelected()
+        }
         this.generateList()
     }
 
-    // 鼠标点击组件
-    handleWrapperClick () {
-        let isShowList = this.state.showList
+    // reset filter input and list
+    resetFilterInput () {
+        if (!this.$filter) return
+        this.$filter.$input.value = ''      // empty filter input
+        this.setState({
+            localChildren: this.props.children
+        })
+    }
+
+    // toggle show/hide of selector
+    handleSelectorToggle () {
         let {
-            disabled,
             onShown,
-            onCollapsed
+            onCollapsed,
+            disabled,
+            enableFilter,
+            children
         } = this.props
 
         if (disabled) return
 
         this.setState({
-            showList: !isShowList
+            isShowList: !this.state.isShowList
         }, () => {
-            if (this.state.showList) {
+            if (this.state.isShowList) {       // show list
+                this.generateList()
+                if (enableFilter) {     // focus on input if enable filter
+                    this.$filter.$input.focus()
+                }
                 onShown && onShown()
-            } else {
+            } else {                         // collapse list
+                if (enableFilter) {
+                    this.resetFilterInput()
+                }
+
                 onCollapsed && onCollapsed()
             }
         })
     }
 
-    // 鼠标指向组件
-    handleWrapperHover () {
+    // handle option click event
+    handleOptionOnClick (obj) {
+        event.stopPropagation()
+
         let {
-            enableClear
-        } = this.props
-        let {
-            showText,
-            showArr
-        } = this.state
-        let icon
-
-        if (enableClear && (showText || showArr.length)) {
-            icon = 'close clear-icon'
-        } else {
-            icon = 'triangle'
-        }
-
-        this.setState({
-            editorIcon: icon
-        })
-    }
-
-    // 鼠标离开组件
-    handleWrapperLeave () {
-        this.setState({
-            editorIcon: 'triangle'
-        })
-    }
-
-    // 选中选项的回调函数
-    handleOptionClick (index) {
-        let {
-            list,
-            displayKey,
             onSelected,
             multiple
         } = this.props
-        let {
-            showArr: curShowArr
-        } = this.state
-        let curItem = list[index]
-        let isShowList, curShowText
+        let isShowList = false
+        let showText = '', curItem = null
 
-        if (curItem.disabled) return
+        if (multiple) {     // multiple select
+            isShowList = true
 
-        if (multiple) {     // 多选
-            let isInArray = this.isInArrayComplex(curShowArr, displayKey, curItem[displayKey])
+            let isInArr = this.isInArrayComplex(this.state.showArr, 'value', obj.value)
+            let arr = []
 
-            isShowList = multiple
-            curShowText = ''
-            if (!isInArray.result) {
-                curShowArr.push(curItem)
+            if (!isInArr.result) {
+                arr.push(obj)
+                arr = this.state.showArr.concat(arr)
             } else {
-                curShowArr.splice(isInArray.index, 1)
+                arr = this.state.showArr
+                arr.splice(isInArr.index, 1)
             }
-        } else {            // 单选
-            isShowList = false
-            curShowText = curItem[displayKey]
-        }
 
-        this.setState({
-            showList: isShowList,
-            showText: curShowText,
-            showArr: curShowArr
-        }, () => {
-            this.generateList()
-
-            if (multiple) {
-                this.generateMultipleSelected()
-            }
-        })
-        onSelected && onSelected(multiple ? curShowArr : curShowText)
-    }
-
-    // 清空已选项
-    clearEditor (e) {
-        let {
-            onClear
-        } = this.props
-
-        if (this.props.multiple) {
             this.setState({
-                showArr: [],
-                showList: false
+                isShowList,
+                showText,
+                showArr: arr
             }, () => {
                 this.generateMultipleSelected()
                 this.generateList()
-                this.handleWrapperLeave()
-                onClear && onClear()
+                onSelected && onSelected(obj)
             })
         } else {
+            showText = obj.label
+            curItem = obj
+
             this.setState({
-                showText: ''
+                isShowList,
+                showText,
+                curItem
             }, () => {
-                this.handleWrapperLeave()
+                this.resetFilterInput()
+                onSelected && onSelected(obj)
+            })
+        }
+    }
+
+    // empty selected options
+    clearEditor (e) {
+        let {
+            onClear,
+            multiple
+        } = this.props
+
+        if (multiple) {
+
+        } else {
+            this.setState({
+                showText: '',
+                curItem: null
+            }, () => {
                 onClear && onClear()
             })
         }
@@ -155,215 +148,216 @@ class Select extends Component {
         e.stopPropagation()
     }
 
-    // 计算实时的editor的高度
+    // callback when click outside of component
+    handleClickOutside () {
+        if (this.state.isShowList) {
+            this.handleSelectorToggle()
+        }
+    }
+
+    // calc size of editor
     getEditorSize () {
         let calcHeight = getComputedStyle(this.$multiple).height
 
         return `${Math.max(this.convertToNum(calcHeight), 36)}px`
     }
 
-    // 根据state中的showArr生成多选的值
+    // generate DOM of selected list
+    generateMultipleWrapper () {
+        this.setState({
+            calcMultipleWrapper: <div ref={ multiple => this.$multiple = multiple }
+                                    className={ this.formatClsNames(
+                                        `${ this.getLibName() }-select__multiple-wrapper`
+                                    ) }
+                                    onClick={ this.handleSelectorToggle.bind(this) }>
+                                    { this.state.calcMultipleSelected }
+                                </div>
+        }, () => {
+            let _height = this.getEditorSize()
+
+            this.$selector.$editor.$input.style.height = _height
+            this.setState({
+                calcEditorSize: _height
+            })
+        })
+    }
+
+    // generate multiple selected list in selector
     generateMultipleSelected () {
         let {
             showArr: arr
         } = this.state
-        let {
-            displayKey
-        } = this.props
+
         let libName = this.getLibName()
-        let tpl = arr.map((item, index) =>
-            <span
-                className={ this.formatClsNames(
+        let formatClsNames = this.formatClsNames
+        let tpl = arr.map((v, k) => {
+            return <span
+                className={ formatClsNames(
                     `${ libName }-tag`,
                     'primary'
                 ) }
-                key={ item[displayKey] }>
-                { item[displayKey] }
+                key={ v.value }
+                onClick={ this.handleSelectorToggle.bind(this) }>
+                { v.label }
             </span>
-        )
-        // tag的关闭按钮
-        // <i className={ this.formatClsNames(
-        //         `${ libName }-tag__icon`,
-        //         'iconfont',
-        //         `icon-${ libName }-close`
-        //     ) }
-        //     onClick={ this.removeMultipleItem(event, item) }/>
+        })
 
         this.setState({
             calcMultipleSelected: tpl
         }, () => {
-            this.setState({
-                calcEditorSize: this.getEditorSize()
-            })
+            this.generateMultipleWrapper()
         })
     }
 
-    // 删除多选选项
-    removeMultipleItem (e, item) {
+    // assembly options
+    generateList () {
         let {
-            displayKey
+            multiple,
+            enableFilter,
+            render
         } = this.props
-        let isInArray = this.isInArrayComplex(this.state.showArr, displayKey, item[displayKey])
-
-        if (isInArray.result) {
-            this.setState({
-                showArr: this.state.showArr.splice(isInArray.index, 1)
-            })
-        }
-        e.stopPropagation()
-    }
-
-    // 根据传入的数据生成列表
-    generateList (list = this.props.list) {
-        let displayKey = this.props.displayKey
-        let libName = this.getLibName()
-        let isInArrayComplex = this.isInArrayComplex
         let {
-            showText,
+            curItem,
+            localChildren,
             showArr
         } = this.state
+        let optionsTpl
+
+        optionsTpl = localChildren && localChildren.map((v, k) => {
+            let {
+                value,
+                label
+            } = v.props
+
+            return <SelectOption
+                        key={ v.key }
+                        selected={ (curItem && curItem.value === value) || this.isInArrayComplex(showArr, 'value', value).result }
+                        multiple={ multiple }
+                        onClick={ this.handleOptionOnClick.bind(this) }
+                        render={ render }
+                        { ...v.props }
+                    />
+        })
+
+        this.setState({
+            calcList: optionsTpl
+        })
+
+        if (enableFilter) { // add filter area if enable filter
+            this.generateFilter()
+        }
+    }
+
+    generateFilter () {
+        let libName = this.getLibName()
+        let formatClsNames = this.formatClsNames
+        let filter = React.createElement(Input, {
+                ref: filter => this.$filter = filter,
+                key: 'filter',
+                className: formatClsNames(
+                    `${ libName }-select__filter`,
+                    `${ libName }-input__el`
+                ),
+                icon: 'check',
+                iconFloat: 'left',
+                onChange: this.handleFilter.bind(this)
+            })
+
+        this.setState({
+            calcFilter: filter
+        })
+    }
+
+    // callback function for filter
+    handleFilter (input) {
+        let arr = []
         let {
-            multiple
+            filterRule,
+            onFilter
         } = this.props
 
-        let tpl = list.map((item, index) => {
-            let curItem = item[displayKey]
-
-            return <div className={ this.formatClsNames(
-                    `${ libName }-select__item`,
-                    `${ item.disabled ? 'disabled' : '' }`,
-                    `${ showText === curItem || isInArrayComplex(showArr, displayKey, item[displayKey]).result ? 'selected' : '' }`
-                ) }
-                key={ curItem }
-                onClick={ this.handleOptionClick.bind(this, index) }>
-                { curItem }
-                {
-                    multiple ? <i className={ this.formatClsNames(
-                                        'iconfont',
-                                        `icon-${ libName }-check`
-                                    ) }/> : ''
-                }
-            </div>
-        })
-
-        this.setState({
-            selectList: tpl
-        })
-    }
-
-    // 配置可筛选时，input框输入的回调函数
-    changeHandler (val) {
-        this.setState({
-            showText: val
-        }, () => {
+        this.props.children.map((v, k) => {
             let {
-                list,
-                displayKey,
-                searchMethod,
-                onInput
-            } = this.props
-            let inputValue = this.state.showText
-            let resultArr = []
+                value,
+                label
+            } = v.props
 
-            // 当前是否配置了搜索规则函数
-            if (!searchMethod) {
-                for (let item of list) {
-                    if (item[displayKey].indexOf(inputValue) > -1) {
-                        resultArr.push(item)
-                    }
-                }
-            } else {
-                resultArr = searchMethod(inputValue)
+            if ((filterRule && filterRule(input, {
+                value: value,
+                label: label
+            })) || v.props.label.includes(input)) {
+                arr.push(v)
             }
-
-            this.generateList(resultArr)
-            onInput && onInput(inputValue, resultArr)
         })
-    }
 
-    // 鼠标点击组件外时的回调函数
-    handleClickOutside () {
-        if (this.state.showList) {
-            this.setState({
-                showList: false
-            })
-        }
+        this.setState({
+            localChildren: arr
+        }, () => {
+            onFilter && onFilter(input)
+            this.generateList()
+        })
     }
 
     render () {
         let libName = this.getLibName()
+        let formatClsNames = this.formatClsNames
         let {
-            extCls,
-            list,
-            enableSearch,
+            children,
+            enableFilter,
             enableClear,
             placeholder,
             disabled,
             multiple
         } = this.props
         let {
-            showArr
+            showArr,
+            isShowList,
+            showText,
+            curItem,
+            calcEditorSize,
+            calcMultipleWrapper,
+            calcList,
+            calcFilter
         } = this.state
-        let formatClsNames = this.formatClsNames
 
-        return <div ref={ (root) => this.$root = root }
+        return <div
                     className={ formatClsNames(
                         `${ libName }-select`,
                         `${ disabled ? `${ libName }-select__disabled` : '' }`,
-                        `${ multiple ? `${ libName }-select__multiple` : '' }`,
-                        extCls
+                        `${ multiple ? `${ libName }-select__multiple` : '' }`
                     ) }
                     style={{ height: this.state.calcEditorSize }}>
-                    <div className={ formatClsNames(
-                            `${ libName }-select__wrapper`,
-                            `${ enableClear ? `${ libName }-select__clear` : '' }`
-                        ) }
-                        onClick={ this.handleWrapperClick.bind(this) }
-                        onMouseEnter={ this.handleWrapperHover.bind(this) }
-                        onMouseLeave={ this.handleWrapperLeave.bind(this) }>
-                        <Input
-                            ref={ (editor) => this.$editor = editor }
-                            mode='input'
-                            placeholder={ multiple && showArr.length ? '' : placeholder }
-                            extCls={ `${ libName }-select__el` }
-                            readOnly={ !enableSearch }
-                            value={ this.state.showText }
-                            disabled={ disabled }
-                            style={{ height: this.state.calcEditorSize }}
-                            onChange={ this.changeHandler.bind(this) }
-                        />
-                        <i className={ formatClsNames(
-                                'iconfont',
-                                `icon-${ libName }-${ this.state.editorIcon }`,
-                                `${ libName }-select__icon`,
-                                `${ this.state.showList ? 'expanded' : '' }`
-                            ) }
-                            onClick={ this.clearEditor.bind(this) }
-                        />
-                    <div ref={(multiple) => this.$multiple = multiple}
-                            className={ this.formatClsNames(
-                                `${ libName }-select__multiple-wrapper`
-                            ) }>
-                            { this.state.calcMultipleSelected }
-                        </div>
-                    </div>
+                    <Selector ref={ selector => this.$selector = selector }
+                        placeholder={ multiple && showArr.length ? '' : placeholder }
+                        readOnly={ true }
+                        expanded={ isShowList }
+                        selectorIcon='triangle'
+                        extraIcon='close'
+                        enableExtraIcon={ enableClear }
+                        value={ showText }
+                        disabled={ disabled }
+                        enableClear={ enableClear }
+                        onClick={ this.handleSelectorToggle.bind(this) }
+                        extraIconOnClick={ this.clearEditor.bind(this) }
+                    />
+                    { multiple ? calcMultipleWrapper : '' }
                     <div className={ formatClsNames(
                             `${ libName }-select__list`
                         ) }
                         style={{
-                            display: this.state.showList ? 'block' : 'none',
-                            top: `${this.convertToNum(this.state.calcEditorSize) + 4}px`
+                            display: `${ isShowList ? 'block' : 'none'}`,
+                            top: `${ this.convertToNum(calcEditorSize) + 4 }px`
                         }}>
-                            { this.state.selectList }
+                        { calcFilter }
+                        <ul>
+                            { calcList }
+                        </ul>
                     </div>
                 </div>
     }
 }
 
 Select.propTypes = {
-    extCls: PropTypes.string,
-    list: PropTypes.array,
-    displayKey: PropTypes.string,
     disabled: PropTypes.bool,
     multiple: PropTypes.bool,
     // input相关属性
@@ -371,24 +365,26 @@ Select.propTypes = {
         PropTypes.string,
         PropTypes.number
     ]),
-    value: PropTypes.oneOfType([
+    value: PropTypes.oneOfType([    // current display value
         PropTypes.string,
-        PropTypes.number
+        PropTypes.number,
+        PropTypes.array
     ]),
-    enableSearch: PropTypes.bool,
-    searchMethod: PropTypes.func,   // 自定义搜索规则，需返回一个结果数组
+    enableFilter: PropTypes.bool,
+    filterRule: PropTypes.func,   // custom filter rule, accept two variables
     enableClear: PropTypes.bool,
-    // 各种回调函数
-    onSelected: PropTypes.func,     // 选中选项时
-    onShown: PropTypes.func,        // 显示结果列表时
-    onCollapsed: PropTypes.func,    // 隐藏结果列表时
-    onClear: PropTypes.func,        // 清空选项时
-    onInput: PropTypes.func         // 搜索输入时
+    render: PropTypes.func,         // custom render function for options
+    // callbacks
+    onSelected: PropTypes.func,     // when selected item
+    onShown: PropTypes.func,        // when show list
+    onCollapsed: PropTypes.func,    // when collapse list
+    onClear: PropTypes.func,        // when clear result
+    onFilter: PropTypes.func         // when input filter content
 }
 
 Select.defaultProps = {
-    displayKey: 'text',
-    value: ''
+    value: '',
+    children: []
 }
 
 export default ClickOutside(Select)

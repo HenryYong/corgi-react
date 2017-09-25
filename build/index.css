@@ -329,12 +329,12 @@ table {
 /**
  *  层级关系
  */
-.corgi-row:before, .corgi-btn-group:before, .corgi-select__list .corgi-select__item:before, .corgi-form__row:before, .corgi-form__inline:before, .corgi-row:after, .corgi-btn-group:after, .corgi-select__list .corgi-select__item:after, .corgi-form__row:after, .corgi-form__inline:after {
+.corgi-row:before, .corgi-btn-group:before, .corgi-form__row:before, .corgi-form__inline:before, .corgi-row:after, .corgi-btn-group:after, .corgi-form__row:after, .corgi-form__inline:after {
   content: '';
   display: table;
   line-height: 0;
 }
-.corgi-row:after, .corgi-btn-group:after, .corgi-select__list .corgi-select__item:after, .corgi-form__row:after, .corgi-form__inline:after {
+.corgi-row:after, .corgi-btn-group:after, .corgi-form__row:after, .corgi-form__inline:after {
   clear: both;
 }
 
@@ -422,12 +422,12 @@ table {
 /**
  *  层级关系
  */
-.corgi-row:before, .corgi-btn-group:before, .corgi-select__list .corgi-select__item:before, .corgi-form__row:before, .corgi-form__inline:before, .corgi-row:after, .corgi-btn-group:after, .corgi-select__list .corgi-select__item:after, .corgi-form__row:after, .corgi-form__inline:after {
+.corgi-row:before, .corgi-btn-group:before, .corgi-form__row:before, .corgi-form__inline:before, .corgi-row:after, .corgi-btn-group:after, .corgi-form__row:after, .corgi-form__inline:after {
   content: '';
   display: table;
   line-height: 0;
 }
-.corgi-row:after, .corgi-btn-group:after, .corgi-select__list .corgi-select__item:after, .corgi-form__row:after, .corgi-form__inline:after {
+.corgi-row:after, .corgi-btn-group:after, .corgi-form__row:after, .corgi-form__inline:after {
   clear: both;
 }
 
@@ -534,12 +534,12 @@ table {
 /**
  *  层级关系
  */
-.corgi-row:before, .corgi-btn-group:before, .corgi-select__list .corgi-select__item:before, .corgi-form__row:before, .corgi-form__inline:before, .corgi-row:after, .corgi-btn-group:after, .corgi-select__list .corgi-select__item:after, .corgi-form__row:after, .corgi-form__inline:after {
+.corgi-row:before, .corgi-btn-group:before, .corgi-form__row:before, .corgi-form__inline:before, .corgi-row:after, .corgi-btn-group:after, .corgi-form__row:after, .corgi-form__inline:after {
   content: '';
   display: table;
   line-height: 0;
 }
-.corgi-row:after, .corgi-btn-group:after, .corgi-select__list .corgi-select__item:after, .corgi-form__row:after, .corgi-form__inline:after {
+.corgi-row:after, .corgi-btn-group:after, .corgi-form__row:after, .corgi-form__inline:after {
   clear: both;
 }
 
@@ -819,12 +819,12 @@ table {
 /**
  *  层级关系
  */
-.corgi-row:before, .corgi-btn-group:before, .corgi-select__list .corgi-select__item:before, .corgi-form__row:before, .corgi-form__inline:before, .corgi-row:after, .corgi-btn-group:after, .corgi-select__list .corgi-select__item:after, .corgi-form__row:after, .corgi-form__inline:after {
+.corgi-row:before, .corgi-btn-group:before, .corgi-form__row:before, .corgi-form__inline:before, .corgi-row:after, .corgi-btn-group:after, .corgi-form__row:after, .corgi-form__inline:after {
   content: '';
   display: table;
   line-height: 0;
 }
-.corgi-row:after, .corgi-btn-group:after, .corgi-select__list .corgi-select__item:after, .corgi-form__row:after, .corgi-form__inline:after {
+.corgi-row:after, .corgi-btn-group:after, .corgi-form__row:after, .corgi-form__inline:after {
   clear: both;
 }
 
@@ -1030,6 +1030,9 @@ table {
 .corgi-btn-group > .corgi-btn__status:not(:first-child) {
   border-left-color: rgba(255, 255, 255, 0.7) !important;
 }
+.corgi-btn + .corgi-btn {
+  margin-left: 10px;
+}
 
 /**
  *  Radio样式
@@ -1084,12 +1087,12 @@ table {
 /**
  *  层级关系
  */
-.corgi-row:before, .corgi-btn-group:before, .corgi-select__list .corgi-select__item:before, .corgi-form__row:before, .corgi-form__inline:before, .corgi-row:after, .corgi-btn-group:after, .corgi-select__list .corgi-select__item:after, .corgi-form__row:after, .corgi-form__inline:after {
+.corgi-row:before, .corgi-btn-group:before, .corgi-form__row:before, .corgi-form__inline:before, .corgi-row:after, .corgi-btn-group:after, .corgi-form__row:after, .corgi-form__inline:after {
   content: '';
   display: table;
   line-height: 0;
 }
-.corgi-row:after, .corgi-btn-group:after, .corgi-select__list .corgi-select__item:after, .corgi-form__row:after, .corgi-form__inline:after {
+.corgi-row:after, .corgi-btn-group:after, .corgi-form__row:after, .corgi-form__inline:after {
   clear: both;
 }
 
@@ -1126,12 +1129,12 @@ table {
 /**
  *  层级关系
  */
-.corgi-row:before, .corgi-btn-group:before, .corgi-select__list .corgi-select__item:before, .corgi-form__row:before, .corgi-form__inline:before, .corgi-row:after, .corgi-btn-group:after, .corgi-select__list .corgi-select__item:after, .corgi-form__row:after, .corgi-form__inline:after {
+.corgi-row:before, .corgi-btn-group:before, .corgi-form__row:before, .corgi-form__inline:before, .corgi-row:after, .corgi-btn-group:after, .corgi-form__row:after, .corgi-form__inline:after {
   content: '';
   display: table;
   line-height: 0;
 }
-.corgi-row:after, .corgi-btn-group:after, .corgi-select__list .corgi-select__item:after, .corgi-form__row:after, .corgi-form__inline:after {
+.corgi-row:after, .corgi-btn-group:after, .corgi-form__row:after, .corgi-form__inline:after {
   clear: both;
 }
 
@@ -1331,12 +1334,12 @@ table {
 /**
  *  层级关系
  */
-.corgi-row:before, .corgi-btn-group:before, .corgi-select__list .corgi-select__item:before, .corgi-form__row:before, .corgi-form__inline:before, .corgi-row:after, .corgi-btn-group:after, .corgi-select__list .corgi-select__item:after, .corgi-form__row:after, .corgi-form__inline:after {
+.corgi-row:before, .corgi-btn-group:before, .corgi-form__row:before, .corgi-form__inline:before, .corgi-row:after, .corgi-btn-group:after, .corgi-form__row:after, .corgi-form__inline:after {
   content: '';
   display: table;
   line-height: 0;
 }
-.corgi-row:after, .corgi-btn-group:after, .corgi-select__list .corgi-select__item:after, .corgi-form__row:after, .corgi-form__inline:after {
+.corgi-row:after, .corgi-btn-group:after, .corgi-form__row:after, .corgi-form__inline:after {
   clear: both;
 }
 
@@ -1438,7 +1441,7 @@ table {
 }
 
 /**
- *  Input样式
+ *  Input Style
  *  Created @ 2017-08-22 00:54:02
  *  Copyright (c) 2017 by Henry Yang.
  *  All Rights Reserved.
@@ -1483,12 +1486,12 @@ table {
 /**
  *  层级关系
  */
-.corgi-row:before, .corgi-btn-group:before, .corgi-select__list .corgi-select__item:before, .corgi-form__row:before, .corgi-form__inline:before, .corgi-row:after, .corgi-btn-group:after, .corgi-select__list .corgi-select__item:after, .corgi-form__row:after, .corgi-form__inline:after {
+.corgi-row:before, .corgi-btn-group:before, .corgi-form__row:before, .corgi-form__inline:before, .corgi-row:after, .corgi-btn-group:after, .corgi-form__row:after, .corgi-form__inline:after {
   content: '';
   display: table;
   line-height: 0;
 }
-.corgi-row:after, .corgi-btn-group:after, .corgi-select__list .corgi-select__item:after, .corgi-form__row:after, .corgi-form__inline:after {
+.corgi-row:after, .corgi-btn-group:after, .corgi-form__row:after, .corgi-form__inline:after {
   clear: both;
 }
 
@@ -1504,6 +1507,7 @@ table {
  */
 .corgi-input {
   position: relative;
+  display: inline-block;
   width: 100%;
   height: 36px;
   font-size: 14px;
@@ -1518,7 +1522,7 @@ table {
 }
 .corgi-input.corgi-input__mini {
   height: 28px;
-  font-size: 14px;
+  font-size: 12px;
 }
 .corgi-input__wrapper {
   display: table;
@@ -1569,12 +1573,28 @@ table {
 .corgi-input__el[disabled]:hover {
   border-color: #e6e6e6;
 }
+.corgi-input__el.primary {
+  border-color: #57a3f1;
+}
+.corgi-input__el.info {
+  border-color: #88c3ff;
+}
+.corgi-input__el.warning {
+  border-color: #ffc349;
+}
+.corgi-input__el.success {
+  border-color: #5bd18b;
+}
+.corgi-input__el.error {
+  border-color: #ff7979;
+}
 .corgi-input__icon {
   position: absolute;
   top: 0;
   bottom: 0;
   width: 36px;
   text-align: center;
+  color: #b2beca;
 }
 .corgi-input__icon.icon-left {
   left: 0;
@@ -1714,12 +1734,12 @@ table {
 /**
  *  层级关系
  */
-.corgi-row:before, .corgi-btn-group:before, .corgi-select__list .corgi-select__item:before, .corgi-form__row:before, .corgi-form__inline:before, .corgi-row:after, .corgi-btn-group:after, .corgi-select__list .corgi-select__item:after, .corgi-form__row:after, .corgi-form__inline:after {
+.corgi-row:before, .corgi-btn-group:before, .corgi-form__row:before, .corgi-form__inline:before, .corgi-row:after, .corgi-btn-group:after, .corgi-form__row:after, .corgi-form__inline:after {
   content: '';
   display: table;
   line-height: 0;
 }
-.corgi-row:after, .corgi-btn-group:after, .corgi-select__list .corgi-select__item:after, .corgi-form__row:after, .corgi-form__inline:after {
+.corgi-row:after, .corgi-btn-group:after, .corgi-form__row:after, .corgi-form__inline:after {
   clear: both;
 }
 
@@ -1832,7 +1852,7 @@ table {
 }
 
 /**
- *  Select样式
+ *  Select Style
  *  Created @ 2017-08-30 16:24:37
  *  Copyright (c) 2017 by Henry Yang.
  *  All Rights Reserved.
@@ -1877,12 +1897,12 @@ table {
 /**
  *  层级关系
  */
-.corgi-row:before, .corgi-btn-group:before, .corgi-select__list .corgi-select__item:before, .corgi-form__row:before, .corgi-form__inline:before, .corgi-row:after, .corgi-btn-group:after, .corgi-select__list .corgi-select__item:after, .corgi-form__row:after, .corgi-form__inline:after {
+.corgi-row:before, .corgi-btn-group:before, .corgi-form__row:before, .corgi-form__inline:before, .corgi-row:after, .corgi-btn-group:after, .corgi-form__row:after, .corgi-form__inline:after {
   content: '';
   display: table;
   line-height: 0;
 }
-.corgi-row:after, .corgi-btn-group:after, .corgi-select__list .corgi-select__item:after, .corgi-form__row:after, .corgi-form__inline:after {
+.corgi-row:after, .corgi-btn-group:after, .corgi-form__row:after, .corgi-form__inline:after {
   clear: both;
 }
 
@@ -1901,34 +1921,6 @@ table {
   width: 100%;
   height: 36px;
 }
-.corgi-select__wrapper {
-  position: relative;
-  height: 100%;
-}
-.corgi-select__wrapper .corgi-select__icon {
-  position: absolute;
-  top: 50%;
-  right: 5px;
-  -webkit-transform: translateY(-50%) rotate(0);
-          transform: translateY(-50%) rotate(0);
-  -webkit-transition: all linear .2s;
-  transition: all linear .2s;
-  font-size: 12px;
-  color: #e6e6e6;
-}
-.corgi-select__wrapper .corgi-select__icon.expanded {
-  -webkit-transform: translateY(-50%) rotate(180deg);
-          transform: translateY(-50%) rotate(180deg);
-}
-.corgi-select__el .corgi-input__el {
-  cursor: pointer;
-}
-.corgi-select__el .corgi-input__el:hover {
-  border-color: #b2beca;
-}
-.corgi-select__el:hover + .corgi-select__icon {
-  color: #b2beca;
-}
 .corgi-select__list {
   position: absolute;
   top: 40px;
@@ -1937,71 +1929,65 @@ table {
   border: 1px solid #e6e6e6;
   border-radius: 3px;
   background-color: #fff;
-  -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04);
   z-index: 1;
 }
-.corgi-select__list.hidden {
-  display: none;
+.corgi-select__list > ul {
+  padding: 5px 0;
 }
-.corgi-select__list .corgi-select__item {
-  line-height: 36px;
-  padding: 0 10px;
+.corgi-select__option {
+  padding: 10px;
   cursor: pointer;
-  color: #666;
+  font-size: 14px;
 }
-.corgi-select__list .corgi-select__item:hover {
+.corgi-select__option.is-hover {
   background-color: #f5f5f5;
 }
-.corgi-select__list .corgi-select__item.disabled {
-  color: #b2beca;
-  cursor: not-allowed;
-}
-.corgi-select__list .corgi-select__item.disabled:hover {
-  background-color: transparent;
-}
-.corgi-select__list .corgi-select__item.selected {
+.corgi-select__option.selected {
   background-color: #57a3f1;
   color: #fff;
 }
-.corgi-select__list .corgi-select__item.selected:hover {
+.corgi-select__option.selected:hover {
   background-color: #4491e1;
 }
-.corgi-select__list .corgi-select__item .icon-corgi-check {
-  display: none;
-  float: right;
-  line-height: 36px;
-}
-.corgi-select__disabled .corgi-input__el {
+.corgi-select__option.disabled {
+  color: #b2beca;
   cursor: not-allowed;
 }
-.corgi-select__disabled .corgi-input__el:hover {
+.corgi-select__option.disabled:hover {
+  background-color: transparent;
+}
+.corgi-select__disabled .corgi-input .corgi-input__el {
+  cursor: not-allowed;
+  background-color: #f5f5f5;
+}
+.corgi-select__disabled .corgi-input .corgi-input__el:hover {
   border-color: #e6e6e6;
 }
-.corgi-select__disabled .corgi-select__el + .corgi-select__icon {
-  color: #e6e6e6;
-  cursor: not-allowed;
-}
-.corgi-select__clear:hover > .clear-icon {
-  border-radius: 50%;
-  background-color: #e6e6e6;
-  color: #fff;
-  cursor: pointer;
-  -webkit-transition: none;
-  transition: none;
-}
-.corgi-select__clear:hover > .clear-icon:hover {
-  background-color: #b2beca;
-}
-.corgi-select__multiple .corgi-select__item.selected {
+.corgi-select__multiple .corgi-select__option.selected {
+  position: relative;
   background-color: transparent;
   color: #57a3f1;
 }
-.corgi-select__multiple .corgi-select__item.selected:hover {
+.corgi-select__multiple .corgi-select__option.selected:hover {
   background-color: #f5f5f5;
 }
-.corgi-select__multiple .corgi-select__item.selected .icon-corgi-check {
+.corgi-select__multiple .corgi-select__option.selected .icon-corgi-check {
   display: block;
+}
+.corgi-select__multiple .corgi-select__option.selected:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  display: inline-block;
+  width: 8px;
+  height: 4px;
+  border-left: 2px solid #57a3f1;
+  border-bottom: 2px solid #57a3f1;
+  -webkit-transform: rotate(300deg) translateY(-10px);
+          transform: rotate(300deg) translateY(-10px);
 }
 .corgi-select__multiple-wrapper {
   position: absolute;
@@ -2014,8 +2000,127 @@ table {
   margin-right: 5px;
   margin-bottom: 6px;
 }
-.corgi-select.corgi-select__editable .corgi-select__el:focus {
-  border-color: #57a3f1;
+.corgi-select__filter {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-radius: 0;
+}
+.corgi-select .corgi-selector__extra .icon-corgi-close {
+  background-color: #b2beca;
+  border-radius: 50%;
+}
+.corgi-select__group {
+  padding-left: 5px;
+  font-size: 12px;
+  color: #ccc;
+  cursor: default;
+}
+
+/**
+ *  Selector style
+ *  Created @ 2017-09-15 16:43:35
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  params
+ *  Created @ 2017-07-20 00:37:42
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  颜色变量 start
+ */
+/**
+ *  颜色变量 end
+ */
+/**
+ *  层级关系
+ */
+/**
+ *  组件样式配置文件
+ *  Created @ 2017-07-30 17:51:17
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  params
+ *  Created @ 2017-07-20 00:37:42
+ *  Copyright (c) 2017 by Henry Yang.
+ *  All Rights Reserved.
+ *  License: MIT
+ */
+/**
+ *  颜色变量 start
+ */
+/**
+ *  颜色变量 end
+ */
+/**
+ *  层级关系
+ */
+.corgi-row:before, .corgi-btn-group:before, .corgi-form__row:before, .corgi-form__inline:before, .corgi-row:after, .corgi-btn-group:after, .corgi-form__row:after, .corgi-form__inline:after {
+  content: '';
+  display: table;
+  line-height: 0;
+}
+.corgi-row:after, .corgi-btn-group:after, .corgi-form__row:after, .corgi-form__inline:after {
+  clear: both;
+}
+
+.corgi-input__icon:after, .corgi-input__addon:after {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+/**
+ *  生成和颜色相关的属性
+ */
+.corgi-selector {
+  position: relative;
+  height: 100%;
+}
+.corgi-selector .corgi-selector__icon {
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  -webkit-transform: translateY(-50%) rotate(0);
+          transform: translateY(-50%) rotate(0);
+  -webkit-transition: -webkit-transform linear .2s;
+  transition: -webkit-transform linear .2s;
+  transition: transform linear .2s;
+  transition: transform linear .2s, -webkit-transform linear .2s;
+  font-size: 12px;
+  color: #e6e6e6;
+}
+.corgi-selector .corgi-selector__icon.expanded {
+  -webkit-transform: translateY(-50%) rotate(180deg);
+          transform: translateY(-50%) rotate(180deg);
+}
+.corgi-selector .corgi-input__el {
+  cursor: pointer;
+}
+.corgi-selector .corgi-input__el:hover {
+  border-color: #b2beca;
+}
+.corgi-selector .corgi-selector__icon {
+  cursor: pointer;
+  z-index: 1;
+}
+.corgi-selector .corgi-selector__icon:hover + .corgi-input__disabled .corgi-input__el {
+  border-color: #e6e6e6 !important;
+}
+.corgi-selector .corgi-selector__icon:hover + .corgi-input .corgi-input__el {
+  border-color: #b2beca;
+}
+.corgi-selector__disabled .corgi-selector__icon {
+  cursor: not-allowed;
 }
 
 /**
@@ -2064,12 +2169,12 @@ table {
 /**
  *  层级关系
  */
-.corgi-row:before, .corgi-btn-group:before, .corgi-select__list .corgi-select__item:before, .corgi-form__row:before, .corgi-form__inline:before, .corgi-row:after, .corgi-btn-group:after, .corgi-select__list .corgi-select__item:after, .corgi-form__row:after, .corgi-form__inline:after {
+.corgi-row:before, .corgi-btn-group:before, .corgi-form__row:before, .corgi-form__inline:before, .corgi-row:after, .corgi-btn-group:after, .corgi-form__row:after, .corgi-form__inline:after {
   content: '';
   display: table;
   line-height: 0;
 }
-.corgi-row:after, .corgi-btn-group:after, .corgi-select__list .corgi-select__item:after, .corgi-form__row:after, .corgi-form__inline:after {
+.corgi-row:after, .corgi-btn-group:after, .corgi-form__row:after, .corgi-form__inline:after {
   clear: both;
 }
 
@@ -2175,12 +2280,12 @@ table {
 /**
  *  层级关系
  */
-.corgi-row:before, .corgi-btn-group:before, .corgi-select__list .corgi-select__item:before, .corgi-form__row:before, .corgi-form__inline:before, .corgi-row:after, .corgi-btn-group:after, .corgi-select__list .corgi-select__item:after, .corgi-form__row:after, .corgi-form__inline:after {
+.corgi-row:before, .corgi-btn-group:before, .corgi-form__row:before, .corgi-form__inline:before, .corgi-row:after, .corgi-btn-group:after, .corgi-form__row:after, .corgi-form__inline:after {
   content: '';
   display: table;
   line-height: 0;
 }
-.corgi-row:after, .corgi-btn-group:after, .corgi-select__list .corgi-select__item:after, .corgi-form__row:after, .corgi-form__inline:after {
+.corgi-row:after, .corgi-btn-group:after, .corgi-form__row:after, .corgi-form__inline:after {
   clear: both;
 }
 
@@ -2300,12 +2405,12 @@ table {
 /**
  *  层级关系
  */
-.corgi-row:before, .corgi-btn-group:before, .corgi-select__list .corgi-select__item:before, .corgi-form__row:before, .corgi-form__inline:before, .corgi-row:after, .corgi-btn-group:after, .corgi-select__list .corgi-select__item:after, .corgi-form__row:after, .corgi-form__inline:after {
+.corgi-row:before, .corgi-btn-group:before, .corgi-form__row:before, .corgi-form__inline:before, .corgi-row:after, .corgi-btn-group:after, .corgi-form__row:after, .corgi-form__inline:after {
   content: '';
   display: table;
   line-height: 0;
 }
-.corgi-row:after, .corgi-btn-group:after, .corgi-select__list .corgi-select__item:after, .corgi-form__row:after, .corgi-form__inline:after {
+.corgi-row:after, .corgi-btn-group:after, .corgi-form__row:after, .corgi-form__inline:after {
   clear: both;
 }
 

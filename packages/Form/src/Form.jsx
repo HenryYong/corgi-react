@@ -1,5 +1,5 @@
 /**
- *  Form组件
+ *  Form Component
  *  Created @ 2017-09-07 00:18:05
  *  Copyright (c) 2017 by Henry Yang.
  *  All Rights Reserved.
@@ -25,6 +25,14 @@ class Form extends Component {
         }
     }
 
+    submitHandler () {
+        let {
+            onSubmit
+        } = this.props
+
+        onSubmit && onSubmit()
+    }
+
     render () {
         let formatClsNames = this.formatClsNames
         let libName = this.getLibName()
@@ -37,15 +45,16 @@ class Form extends Component {
                         `${ libName }-form`,
                         `${ labelAlign ? `${ libName }-form__label-${ labelAlign }` : '' }`,
                         `${ inline ? `${ libName }-form__inline` : '' }`
-                    ) }>
+                    ) }
+                    onSubmit={ this.submitHandler.bind(this) }>
                     { this.props.children }
                 </form>
     }
 }
 
 Form.propTypes = {
-    labelAlign: PropTypes.string,
-    inline: PropTypes.bool
+    inline: PropTypes.bool,
+    onSubmit: PropTypes.func
 }
 
 Form.childContextTypes = {
